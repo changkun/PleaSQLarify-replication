@@ -1,0 +1,61 @@
+{
+  "n_runs": 27,
+  "nontrivial_initial_ambiguity": 15,
+  "per_condition": {
+    "Baseline Random + Atomic": {
+      "median_entropy_by_turn": {
+        "0": 0.5297061990576545,
+        "1": 0.15407610367102942,
+        "2": -0.0,
+        "3": -0.0,
+        "5": -0.0,
+        "10": -0.0
+      },
+      "median_convergence_turn": 1.0
+    },
+    "Baseline Max-Prob-First + Atomic": {
+      "median_entropy_by_turn": {
+        "0": 0.5297061990576545,
+        "1": 0.5623351446188083,
+        "2": 0.15407610367102942,
+        "3": -0.0,
+        "5": -0.0,
+        "10": -0.0
+      },
+      "median_convergence_turn": 2.0
+    },
+    "Baseline ERG + Atomic": {
+      "median_entropy_by_turn": {
+        "0": 0.5297061990576545,
+        "1": 0.25731864054383163,
+        "2": -0.0,
+        "3": -0.0,
+        "5": -0.0,
+        "10": -0.0
+      },
+      "median_convergence_turn": 1.0
+    },
+    "Ours: Clustering + EIG + Atomic": {
+      "median_entropy_by_turn": {
+        "0": 0.5297061990576545,
+        "1": -0.0,
+        "2": -0.0,
+        "3": -0.0,
+        "5": -0.0,
+        "10": -0.0
+      },
+      "median_convergence_turn": 1.0
+    },
+    "Ours: Clustering + EIG + Feature Grouping": {
+      "median_entropy_by_turn": {
+        "0": 0.5297061990576545,
+        "1": -0.0,
+        "2": -0.0,
+        "3": -0.0,
+        "5": -0.0,
+        "10": -0.0
+      },
+      "median_convergence_turn": 1.0
+    }
+  }
+}

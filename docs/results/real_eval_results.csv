@@ -1,0 +1,1926 @@
+condition,ambiguity_type,sample_id,gold,turn,entropy,similarity
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,0,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,1,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,2,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,3,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,4,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,5,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,6,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,7,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,8,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,9,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,10,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,0,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,1,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,2,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,3,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,4,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,5,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,6,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,7,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,8,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,9,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,0,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,0,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,0,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,1,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,2,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,0,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,1,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,2,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,0,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,0,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_entertainment_hub,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,0,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,0,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_entertainment_hub,1,10,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,0,-0.000000,0.799243
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,1,-0.000000,0.807374
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,2,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,3,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,4,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,5,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,6,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,7,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,8,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,9,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,10,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,0,-0.000000,0.799243
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,1,-0.000000,0.807374
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,2,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,3,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,4,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,5,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,6,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,7,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,8,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,9,-0.000000,0.888001
+Baseline Random + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,10,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,0,-0.000000,0.799243
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,1,-0.000000,0.807374
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,2,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,3,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,4,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,5,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,6,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,7,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,8,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,9,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,10,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,0,-0.000000,0.799243
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,1,-0.000000,0.807374
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,2,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,3,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,4,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,5,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,6,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,7,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,8,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,9,-0.000000,0.888001
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,10,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,0,-0.000000,0.799243
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,1,-0.000000,0.851731
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,2,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,3,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,4,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,5,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,6,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,7,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,8,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,9,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,10,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,0,-0.000000,0.799243
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,1,-0.000000,0.851731
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,2,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,3,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,4,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,5,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,6,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,7,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,8,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,9,-0.000000,0.888001
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,10,-0.000000,0.888001
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,0,-0.000000,0.799243
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,1,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,2,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,3,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,4,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,5,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,6,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,7,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,8,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,9,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,0,10,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,0,-0.000000,0.799243
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,1,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,2,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,3,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,4,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,5,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,6,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,7,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,8,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,9,-0.000000,0.851731
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_hospitality_staff,1,10,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,0,-0.000000,0.799243
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,1,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,2,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,3,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,4,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,5,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,6,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,7,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,8,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,9,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,0,10,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,0,-0.000000,0.799243
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,1,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,2,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,3,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,4,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,5,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,6,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,7,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,8,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,9,-0.000000,0.851731
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_hospitality_staff,1,10,-0.000000,0.851731
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,0,0.146145,0.484060
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,1,0.198515,0.485326
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,2,0.206192,0.472847
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,3,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,4,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,5,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,6,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,7,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,8,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,9,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,0,10,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,0,0.146145,0.484060
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,1,0.154076,0.484776
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,2,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,3,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,4,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,5,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,6,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,7,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,8,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,9,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_ref_leisure_features,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,0,0.146145,0.484060
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,1,0.149995,0.475550
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,2,0.154076,0.467143
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,3,0.158411,0.458937
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,4,0.163024,0.451058
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,0,0.146145,0.484060
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,1,0.149995,0.475550
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,2,0.154076,0.467143
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,3,0.158411,0.458937
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,4,0.163024,0.451058
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_ref_leisure_features,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,0,0.146145,0.484060
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,1,0.257319,0.480370
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,2,0.376770,0.339038
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,3,0.562335,0.532808
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,0,0.146145,0.484060
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,1,0.257319,0.480370
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,2,0.376770,0.339038
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,3,0.562335,0.532808
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,0,0.146145,0.484060
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,1,0.257319,0.480370
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,2,0.562335,0.532808
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,0,0.146145,0.484060
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,1,0.257319,0.480370
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,2,0.562335,0.532808
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_ref_leisure_features,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,0,0.146145,0.484060
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,1,0.173205,0.604844
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,2,0.257319,0.746179
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,0,0.146145,0.484060
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,1,0.173205,0.604844
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,2,0.257319,0.746179
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_ref_leisure_features,1,10,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,0,0.686962,0.854516
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,1,-0.000000,0.962988
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,2,-0.000000,0.950076
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,3,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,4,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,5,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,6,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,7,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,8,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,9,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,0,10,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,0,0.686962,0.854516
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,1,0.636514,0.929023
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,2,-0.000000,0.966161
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,3,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,4,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,5,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,6,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,7,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,8,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,9,-0.000000,1.000000
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation1,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,0,0.686962,0.854516
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,1,0.685314,0.946634
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,2,0.655482,0.937640
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,3,-0.000000,0.966161
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,0,0.686962,0.854516
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,1,0.685314,0.946634
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,2,0.655482,0.937640
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,3,-0.000000,0.966161
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation1,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,0,0.686962,0.854516
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,1,0.636514,0.929023
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,2,-0.000000,0.966161
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,0,0.686962,0.854516
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,1,0.636514,0.929023
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,2,-0.000000,0.966161
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation1,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,0,0.686962,0.854516
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,1,0.685314,0.946634
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,2,0.636514,0.929023
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,3,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,4,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,5,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,6,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,7,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,8,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,9,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,0,10,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,0,0.686962,0.854516
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,1,0.685314,0.946634
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,2,0.636514,0.929023
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,3,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,4,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,5,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,6,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,7,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,8,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,9,-0.000000,0.966161
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation1,1,10,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,0,0.686962,0.854516
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,1,0.685314,0.946634
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,2,0.636514,0.929023
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,3,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,4,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,5,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,6,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,7,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,8,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,9,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,0,10,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,0,0.686962,0.854516
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,1,0.685314,0.946634
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,2,0.636514,0.929023
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,3,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,4,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,5,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,6,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,7,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,8,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,9,-0.000000,0.966161
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation1,1,10,-0.000000,0.966161
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,0,0.623655,0.864575
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,1,0.636514,0.863616
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,2,0.693147,0.874702
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,3,0.500402,0.802669
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,4,0.562335,0.855007
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,5,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,6,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,7,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,8,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,9,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,0,10,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,0,0.623655,0.864575
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,1,0.636514,0.863616
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,2,0.621086,0.870535
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,3,0.636514,0.924468
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,4,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,5,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,6,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,7,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,8,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,9,-0.000000,0.912720
+Baseline Random + Atomic,attachment,attachment_2tab_val_accommodation2,1,10,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,0,0.623655,0.864575
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,1,0.636514,0.863616
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,2,0.605797,0.873004
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,3,0.621086,0.870535
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,4,0.693147,0.876657
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,5,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,6,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,7,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,8,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,9,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,0,10,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,0,0.623655,0.864575
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,1,0.636514,0.863616
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,2,0.605797,0.873004
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,3,0.621086,0.870535
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,4,0.693147,0.876657
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,5,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,6,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,7,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,8,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,9,-0.000000,0.912720
+Baseline Max-Prob-First + Atomic,attachment,attachment_2tab_val_accommodation2,1,10,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,0,0.623655,0.864575
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,1,0.636514,0.877289
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,2,0.636514,0.808589
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,3,0.562335,0.878694
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,4,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,5,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,6,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,7,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,8,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,9,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,0,10,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,0,0.623655,0.864575
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,1,0.636514,0.877289
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,2,0.636514,0.808589
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,3,0.562335,0.878694
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,4,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,5,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,6,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,7,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,8,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,9,-0.000000,0.912720
+Baseline ERG + Atomic,attachment,attachment_2tab_val_accommodation2,1,10,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,0,0.623655,0.864575
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,1,0.690186,0.866645
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,2,0.693147,0.874702
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,3,0.693147,0.876657
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,4,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,5,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,6,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,7,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,8,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,9,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,0,10,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,0,0.623655,0.864575
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,1,0.690186,0.866645
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,2,0.693147,0.874702
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,3,0.693147,0.876657
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,4,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,5,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,6,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,7,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,8,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,9,-0.000000,0.912720
+Ours: Clustering + EIG + Atomic,attachment,attachment_2tab_val_accommodation2,1,10,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,0,0.623655,0.864575
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,1,0.690186,0.866645
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,2,0.693147,0.874702
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,3,0.693147,0.876657
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,4,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,5,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,6,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,7,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,8,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,9,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,0,10,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,0,0.623655,0.864575
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,1,0.690186,0.866645
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,2,0.693147,0.874702
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,3,0.693147,0.876657
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,4,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,5,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,6,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,7,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,8,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,9,-0.000000,0.912720
+Ours: Clustering + EIG + Feature Grouping,attachment,attachment_2tab_val_accommodation2,1,10,-0.000000,0.912720
+Baseline Random + Atomic,scope,scope_photographers_styles,0,0,-0.000000,0.922560
+Baseline Random + Atomic,scope,scope_photographers_styles,0,1,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,2,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,0,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,0,-0.000000,0.922560
+Baseline Random + Atomic,scope,scope_photographers_styles,1,1,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,2,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_photographers_styles,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,0,-0.000000,0.922560
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,0,-0.000000,0.922560
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_photographers_styles,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,0,-0.000000,0.922560
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,1,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,2,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,0,-0.000000,0.922560
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,1,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,2,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_photographers_styles,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,0,-0.000000,0.922560
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,0,-0.000000,0.922560
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_photographers_styles,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,0,-0.000000,0.922560
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,0,-0.000000,0.922560
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_photographers_styles,1,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,0,0.529706,0.931050
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,1,-0.000000,0.983673
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,0,0.529706,0.931050
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,1,0.562335,0.938215
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,0,0.529706,0.931050
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,1,0.562335,0.938215
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,0,0.529706,0.931050
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,1,0.562335,0.938215
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,0,0.529706,0.931050
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,1,-0.000000,0.983673
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,0,0.529706,0.931050
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,1,-0.000000,0.983673
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,0,0.529706,0.931050
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,1,0.636514,0.896509
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,0,0.529706,0.931050
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,1,0.636514,0.896509
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,0,0.529706,0.931050
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,1,0.636514,0.896509
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,0,0.529706,0.931050
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,1,0.636514,0.896509
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,0,-0.000000,0.844110
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,1,-0.000000,0.855300
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,0,-0.000000,0.844110
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,1,-0.000000,0.862408
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,0,-0.000000,0.844110
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,1,-0.000000,0.855300
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,0,-0.000000,0.844110
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,1,-0.000000,0.855300
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,0.877145
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,0,-0.000000,0.844110
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,1,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,0,-0.000000,0.844110
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,1,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,0,-0.000000,0.844110
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,1,-0.000000,0.855300
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,0,-0.000000,0.844110
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,1,-0.000000,0.855300
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,0,-0.000000,0.844110
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,1,-0.000000,0.847917
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,0,-0.000000,0.844110
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,1,-0.000000,0.847917
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_patient_advocates_issues,1,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,0,-0.000000,0.906143
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,1,-0.000000,0.924714
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,2,-0.000000,0.874524
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,3,-0.000000,0.811786
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,0,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,0,-0.000000,0.906143
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,1,-0.000000,0.893828
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,2,-0.000000,0.905893
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,3,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,4,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,5,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,6,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,7,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,8,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,9,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_nutritionists_diets,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,0,-0.000000,0.906143
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,1,-0.000000,0.893828
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,2,-0.000000,0.905893
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,3,-0.000000,0.874524
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,0,-0.000000,0.906143
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,1,-0.000000,0.893828
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,2,-0.000000,0.905893
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,3,-0.000000,0.874524
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,scope,scope_nutritionists_diets,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,0,-0.000000,0.906143
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,1,-0.000000,0.880737
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,2,-0.000000,0.874524
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,0,-0.000000,0.906143
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,1,-0.000000,0.880737
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,2,-0.000000,0.874524
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,scope,scope_nutritionists_diets,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,0,-0.000000,0.906143
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,1,-0.000000,0.880737
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,2,-0.000000,0.874524
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,0,-0.000000,0.906143
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,1,-0.000000,0.880737
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,2,-0.000000,0.874524
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,scope,scope_nutritionists_diets,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,0,-0.000000,0.906143
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,1,-0.000000,0.880737
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,2,-0.000000,0.874524
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,0,-0.000000,0.906143
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,1,-0.000000,0.880737
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,2,-0.000000,0.874524
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,scope,scope_nutritionists_diets,1,10,-0.000000,1.000000
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,0,-0.000000,0.951054
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,1,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,2,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,3,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,4,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,5,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,6,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,7,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,8,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,9,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,0,10,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,0,-0.000000,0.951054
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,1,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,2,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,3,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,4,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,5,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,6,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,7,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,8,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,9,-0.000000,0.962156
+Baseline Random + Atomic,scope,scope_marketing_agency_creative_position,1,10,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,0,-0.000000,0.951054
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,1,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,2,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,3,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,4,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,5,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,6,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,7,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,8,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,9,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,0,10,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,0,-0.000000,0.951054
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,1,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,2,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,3,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,4,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,5,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,6,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,7,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,8,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,9,-0.000000,0.962156
+Baseline Max-Prob-First + Atomic,scope,scope_marketing_agency_creative_position,1,10,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,0,-0.000000,0.951054
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,1,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,2,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,3,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,4,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,5,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,6,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,7,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,8,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,9,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,0,10,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,0,-0.000000,0.951054
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,1,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,2,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,3,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,4,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,5,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,6,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,7,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,8,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,9,-0.000000,0.962156
+Baseline ERG + Atomic,scope,scope_marketing_agency_creative_position,1,10,-0.000000,0.962156
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,0,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,1,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,2,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,3,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,4,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,5,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,6,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,7,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,8,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,9,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,0,10,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,0,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,1,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,2,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,3,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,4,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,5,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,6,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,7,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,8,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,9,-0.000000,0.951054
+Ours: Clustering + EIG + Atomic,scope,scope_marketing_agency_creative_position,1,10,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,0,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,1,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,2,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,3,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,4,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,5,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,6,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,7,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,8,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,9,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,0,10,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,0,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,1,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,2,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,3,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,4,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,5,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,6,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,7,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,8,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,9,-0.000000,0.951054
+Ours: Clustering + EIG + Feature Grouping,scope,scope_marketing_agency_creative_position,1,10,-0.000000,0.951054
+Baseline Random + Atomic,vague,vague_2cols_duration,0,0,0.691416,0.935897
+Baseline Random + Atomic,vague,vague_2cols_duration,0,1,0.348832,0.936693
+Baseline Random + Atomic,vague,vague_2cols_duration,0,2,0.376770,0.942327
+Baseline Random + Atomic,vague,vague_2cols_duration,0,3,0.410116,0.955097
+Baseline Random + Atomic,vague,vague_2cols_duration,0,4,0.500402,0.940115
+Baseline Random + Atomic,vague,vague_2cols_duration,0,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,0,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,0,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,0,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,0,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,0,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,0,0.691416,0.935897
+Baseline Random + Atomic,vague,vague_2cols_duration,1,1,0.685314,0.938987
+Baseline Random + Atomic,vague,vague_2cols_duration,1,2,0.376770,0.942685
+Baseline Random + Atomic,vague,vague_2cols_duration,1,3,0.450561,0.926988
+Baseline Random + Atomic,vague,vague_2cols_duration,1,4,-0.000000,0.958625
+Baseline Random + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,0,0.691416,0.935897
+Baseline Random + Atomic,vague,vague_2cols_duration,2,1,0.690923,0.946535
+Baseline Random + Atomic,vague,vague_2cols_duration,2,2,0.682908,0.950821
+Baseline Random + Atomic,vague,vague_2cols_duration,2,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,0,0.691416,0.935897
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,1,0.685314,0.938987
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,2,0.673012,0.943735
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,3,0.617242,0.941143
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,4,0.585953,0.957512
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,0,0.691416,0.935897
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,1,0.685314,0.938987
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,2,0.673012,0.943735
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,3,0.617242,0.941143
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,4,0.585953,0.957512
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,0,0.691416,0.935897
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,1,0.685314,0.938987
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,2,0.673012,0.943735
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,3,0.617242,0.941143
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,4,0.585953,0.957512
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,0,0.691416,0.935897
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,1,0.348832,0.936693
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,2,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,0,0.691416,0.935897
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,1,0.348832,0.936693
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,2,0.562335,0.901495
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,3,-0.000000,0.997612
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,0,0.691416,0.935897
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,1,0.348832,0.936693
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,2,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,0,0.691416,0.935897
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,1,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,2,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,3,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,4,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,5,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,6,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,7,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,8,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,9,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,10,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,0,0.691416,0.935897
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,1,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,2,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,3,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,4,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,5,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,6,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,7,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,8,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,9,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,10,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,0,0.691416,0.935897
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,1,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,2,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,3,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,4,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,5,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,6,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,7,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,8,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,9,0.690923,0.946535
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,10,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,0,0.691416,0.935897
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,1,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,2,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,3,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,4,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,5,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,6,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,7,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,8,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,9,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,10,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,0,0.691416,0.935897
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,1,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,2,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,3,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,4,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,5,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,6,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,7,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,8,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,9,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,10,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,0,0.691416,0.935897
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,1,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,2,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,3,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,4,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,5,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,6,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,7,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,8,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,9,0.690923,0.946535
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,10,0.690923,0.946535
+Baseline Random + Atomic,vague,vague_2cols_duration,0,0,0.673012,0.704483
+Baseline Random + Atomic,vague,vague_2cols_duration,0,1,0.636514,0.714479
+Baseline Random + Atomic,vague,vague_2cols_duration,0,2,-0.000000,0.912434
+Baseline Random + Atomic,vague,vague_2cols_duration,0,3,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,4,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,5,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,6,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,7,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,8,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,9,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,0,10,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,1,0,0.673012,0.704483
+Baseline Random + Atomic,vague,vague_2cols_duration,1,1,0.636514,0.713472
+Baseline Random + Atomic,vague,vague_2cols_duration,1,2,0.562335,0.730013
+Baseline Random + Atomic,vague,vague_2cols_duration,1,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_duration,2,0,0.673012,0.704483
+Baseline Random + Atomic,vague,vague_2cols_duration,2,1,0.636514,0.713472
+Baseline Random + Atomic,vague,vague_2cols_duration,2,2,-0.000000,0.912434
+Baseline Random + Atomic,vague,vague_2cols_duration,2,3,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,4,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,5,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,6,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,7,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,8,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,9,-0.000000,0.842184
+Baseline Random + Atomic,vague,vague_2cols_duration,2,10,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,0,0.673012,0.704483
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,1,0.636514,0.713472
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,2,0.562335,0.730013
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,3,-0.000000,0.912434
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,4,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,5,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,6,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,7,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,8,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,9,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,0,10,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,0,0.673012,0.704483
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,1,0.636514,0.713472
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,2,0.562335,0.730013
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,0,0.673012,0.704483
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,1,0.636514,0.713472
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,2,0.562335,0.730013
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,3,-0.000000,0.912434
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,4,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,5,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,6,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,7,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,8,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,9,-0.000000,0.842184
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_duration,2,10,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,0,0.673012,0.704483
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,1,0.636514,0.646541
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,2,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,3,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,4,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,5,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,6,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,7,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,8,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,9,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,0,10,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,0,0.673012,0.704483
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,1,0.636514,0.646541
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,2,-0.000000,0.710682
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,3,-0.000000,0.760912
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,0,0.673012,0.704483
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,1,0.636514,0.646541
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,2,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,3,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,4,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,5,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,6,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,7,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,8,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,9,-0.000000,0.842184
+Baseline ERG + Atomic,vague,vague_2cols_duration,2,10,-0.000000,0.842184
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,0,0.673012,0.704483
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,1,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,2,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,3,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,4,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,5,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,6,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,7,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,8,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,9,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,0,10,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,0,0.673012,0.704483
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,1,-0.000000,0.710682
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,2,-0.000000,0.760912
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,0,0.673012,0.704483
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,1,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,2,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,3,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,4,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,5,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,6,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,7,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,8,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,9,-0.000000,0.912434
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_duration,2,10,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,0,0.673012,0.704483
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,1,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,2,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,3,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,4,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,5,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,6,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,7,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,8,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,9,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,0,10,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,0,0.673012,0.704483
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,1,-0.000000,0.710682
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,2,-0.000000,0.760912
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,0,0.673012,0.704483
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,1,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,2,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,3,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,4,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,5,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,6,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,7,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,8,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,9,-0.000000,0.912434
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_duration,2,10,-0.000000,0.912434
+Baseline Random + Atomic,vague,vague_2tabs_location,0,0,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,1,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,2,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,0,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,1,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,2,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,0,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,1,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,2,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,0,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,0,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,0,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,1,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,2,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,0,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,1,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,2,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,0,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,1,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,2,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,0,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,1,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,2,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,0,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,0,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,0,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,1,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,0,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,0,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,0,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,1,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,0,0,0.577091,0.770685
+Baseline Random + Atomic,vague,vague_2tabs_location,0,1,0.585618,0.766651
+Baseline Random + Atomic,vague,vague_2tabs_location,0,2,0.594424,0.762484
+Baseline Random + Atomic,vague,vague_2tabs_location,0,3,0.603521,0.758178
+Baseline Random + Atomic,vague,vague_2tabs_location,0,4,0.612925,0.753728
+Baseline Random + Atomic,vague,vague_2tabs_location,0,5,0.583235,0.754995
+Baseline Random + Atomic,vague,vague_2tabs_location,0,6,0.317937,0.769405
+Baseline Random + Atomic,vague,vague_2tabs_location,0,7,0.340500,0.752174
+Baseline Random + Atomic,vague,vague_2tabs_location,0,8,0.348832,0.748222
+Baseline Random + Atomic,vague,vague_2tabs_location,0,9,0.429323,0.704052
+Baseline Random + Atomic,vague,vague_2tabs_location,0,10,-0.000000,0.904791
+Baseline Random + Atomic,vague,vague_2tabs_location,1,0,0.577091,0.770685
+Baseline Random + Atomic,vague,vague_2tabs_location,1,1,0.603521,0.758178
+Baseline Random + Atomic,vague,vague_2tabs_location,1,2,0.304636,0.780542
+Baseline Random + Atomic,vague,vague_2tabs_location,1,3,0.325083,0.761489
+Baseline Random + Atomic,vague,vague_2tabs_location,1,4,-0.000000,0.924437
+Baseline Random + Atomic,vague,vague_2tabs_location,1,5,-0.000000,0.904791
+Baseline Random + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,0,0.577091,0.770685
+Baseline Random + Atomic,vague,vague_2tabs_location,2,1,0.585618,0.766651
+Baseline Random + Atomic,vague,vague_2tabs_location,2,2,0.594424,0.762484
+Baseline Random + Atomic,vague,vague_2tabs_location,2,3,0.687092,0.753346
+Baseline Random + Atomic,vague,vague_2tabs_location,2,4,0.703843,0.745373
+Baseline Random + Atomic,vague,vague_2tabs_location,2,5,0.721464,0.736907
+Baseline Random + Atomic,vague,vague_2tabs_location,2,6,0.632369,0.787748
+Baseline Random + Atomic,vague,vague_2tabs_location,2,7,0.687436,0.763421
+Baseline Random + Atomic,vague,vague_2tabs_location,2,8,0.514653,0.832689
+Baseline Random + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,0,0.577091,0.770685
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,1,0.585618,0.766651
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,2,0.594424,0.762484
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,3,0.603521,0.758178
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,4,0.612925,0.754791
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,5,0.559188,0.783425
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,6,0.568424,0.782730
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,7,0.498640,0.815383
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,8,0.389377,0.851875
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,9,0.396033,0.848948
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,0,10,0.402941,0.845922
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,0,0.577091,0.770685
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,1,0.585618,0.766651
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,2,0.594424,0.762484
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,3,0.603521,0.758178
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,4,0.612925,0.754791
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,5,0.559188,0.783425
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,6,0.568424,0.782730
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,7,0.498640,0.815383
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,8,0.389377,0.851875
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,9,0.396033,0.848948
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,1,10,0.402941,0.845922
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,0,0.577091,0.770685
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,1,0.585618,0.766651
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,2,0.594424,0.762484
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,3,0.603521,0.758178
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,4,0.612925,0.754791
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,5,0.559188,0.783425
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,6,0.568424,0.782730
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,7,0.498640,0.815383
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,8,0.389377,0.851875
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,9,0.396033,0.848948
+Baseline Max-Prob-First + Atomic,vague,vague_2tabs_location,2,10,0.402941,0.845922
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,0,0.577091,0.770685
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,1,0.687092,0.753346
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,2,-0.000000,0.938290
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,3,-0.000000,0.924437
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,0,0.577091,0.770685
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,1,0.687092,0.753346
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,2,-0.000000,0.938290
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,3,-0.000000,0.924437
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,0,0.577091,0.770685
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,1,0.687092,0.753346
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,2,-0.000000,0.938290
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,3,-0.000000,0.924437
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,0,0.577091,0.770685
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,1,-0.000000,0.907531
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,2,-0.000000,0.913286
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,0,0.577091,0.770685
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,1,-0.000000,0.907531
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,2,-0.000000,0.913286
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,0,0.577091,0.770685
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,1,-0.000000,0.907531
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,2,-0.000000,0.913286
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,0,0.577091,0.770685
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,1,-0.000000,0.907531
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,2,-0.000000,0.913286
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,0,0.577091,0.770685
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,1,-0.000000,0.907531
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,2,-0.000000,0.913286
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,0,0.577091,0.770685
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,1,-0.000000,0.907531
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,2,-0.000000,0.913286
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2tabs_location,2,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,0,0.918428,0.797085
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,1,0.682908,0.857007
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,2,0.636514,0.866540
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,0,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,0,0.918428,0.797085
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,1,0.682908,0.857007
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,2,0.693147,0.833175
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,1,10,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,0,0.918428,0.797085
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,1,0.682908,0.857007
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,2,0.636514,0.833175
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,3,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,4,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,5,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,6,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,7,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,8,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,9,-0.000000,1.000000
+Baseline Random + Atomic,vague,vague_2cols_supervisor,2,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,0,0.918428,0.797085
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,1,0.897946,0.788213
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,2,0.974315,0.757744
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,3,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,0,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,0,0.918428,0.797085
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,1,0.897946,0.788213
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,2,0.974315,0.757744
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,3,0.682908,0.857007
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,1,10,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,0,0.918428,0.797085
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,1,0.897946,0.788213
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,2,0.974315,0.757744
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,3,0.682908,0.857007
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,4,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,5,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,6,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,7,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,8,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,9,-0.000000,1.000000
+Baseline Max-Prob-First + Atomic,vague,vague_2cols_supervisor,2,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,0,0.918428,0.797085
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,1,1.054920,0.689411
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,2,0.693147,0.570437
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,0,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,0,0.918428,0.797085
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,1,1.054920,0.689411
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,2,0.636514,0.833175
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,1,10,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,0,0.918428,0.797085
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,1,1.054920,0.689411
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,2,0.693147,0.570437
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,3,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,4,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,5,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,6,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,7,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,8,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,9,-0.000000,1.000000
+Baseline ERG + Atomic,vague,vague_2cols_supervisor,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,0,0.918428,0.797085
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,1,0.562335,0.785219
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,0,0.918428,0.797085
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,1,0.562335,0.892755
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,0,0.918428,0.797085
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,1,0.562335,0.785219
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,2,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,3,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,4,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,5,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,6,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,7,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,8,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,9,-0.000000,1.000000
+Ours: Clustering + EIG + Atomic,vague,vague_2cols_supervisor,2,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,0,0.918428,0.797085
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,1,0.562335,0.785219
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,0,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,0,0.918428,0.797085
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,1,0.562335,0.892755
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,1,10,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,0,0.918428,0.797085
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,1,0.562335,0.785219
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,2,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,3,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,4,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,5,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,6,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,7,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,8,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,9,-0.000000,1.000000
+Ours: Clustering + EIG + Feature Grouping,vague,vague_2cols_supervisor,2,10,-0.000000,1.000000
