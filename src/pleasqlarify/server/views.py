@@ -40,8 +40,10 @@ def _cluster_colors(session: Session) -> dict[int, str]:
     return colors
 
 
-def action_space_view(session: Session, use_umap: bool = False) -> dict:
+def action_space_view(session: Session, use_umap: bool | None = None) -> dict:
     """Action Space payload: 2-D glyphs colored by cluster / decision (spec 12)."""
+    if use_umap is None:
+        use_umap = getattr(session, "use_umap", False)
     survivors = session._survivors()
     idx = session.surviving_indices()
     if idx:

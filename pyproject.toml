@@ -6,30 +6,44 @@ readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Changkun Ou" }]
 dependencies = [
-    # Core pipeline — deliberately minimal so the whole algorithm + eval is
-    # testable offline with no model downloads or network. See specs/README.md.
+    # Core pipeline + the (first-class) visual interface. The algorithm and eval
+    # stay offline-testable; heavy research backends are optional extras below.
     "numpy>=1.26",
     "sqlglot>=25.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
 ]
+
+[project.scripts]
+pleasqlarify-serve = "pleasqlarify.server.cli:main"
 
 [project.optional-dependencies]
 # Real research-fidelity backends. The core runs without these via deterministic
 # fallbacks (spec 04 embedder, spec 12 projection, spec 03 generation).
-embeddings = ["sentence-transformers>=3.0"]
-projection = ["umap-learn>=0.5"]
+embeddings = ["sentence-transformers>=3.0", "scikit-learn<1.7"]
+projection = ["umap-learn>=0.5", "scikit-learn<1.7"]
 llm = ["openai>=1.40"]
 data = ["datasets>=2.19"]
 plots = ["matplotlib>=3.8"]
-server = ["fastapi>=0.110", "uvicorn>=0.29"]
-dev = ["pytest>=8.0", "pytest-cov>=5.0"]
-all = [
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "httpx"]
+# Everything needed to run the paper's real backends (GPT-4o, MiniLM, UMAP).
+real = [
     "sentence-transformers>=3.0",
+    "scikit-learn<1.7",
     "umap-learn>=0.5",
     "openai>=1.40",
     "datasets>=2.19",
     "matplotlib>=3.8",
-    "fastapi>=0.110",
-    "uvicorn>=0.29",
+]
+all = [
+    "sentence-transformers>=3.0",
+    "scikit-learn<1.7",
+    "umap-learn>=0.5",
+    "openai>=1.40",
+    "datasets>=2.19",
+    "matplotlib>=3.8",
+    "pytest>=8.0",
+    "httpx",
 ]
 
 [build-system]

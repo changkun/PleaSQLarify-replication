@@ -56,6 +56,7 @@ class Session:
     clustering: bool = True
     k: Optional[int] = None
     threshold: float = 0.1
+    use_umap: bool = False  # Action Space projection backend (spec 12)
 
     # ---- turn state (derived; recomputed each turn) ----
     surviving_ids: list[str] = field(default_factory=list)
@@ -185,6 +186,7 @@ def build_session(
     clustering: bool = True,
     k: Optional[int] = None,
     threshold: float = 0.1,
+    use_umap: bool = False,
     results: Optional[dict[str, ResultTable]] = None,
 ) -> Session:
     """Run steps 1-4 to build an initial :class:`Session`.
@@ -215,6 +217,7 @@ def build_session(
         clustering=clustering,
         k=k,
         threshold=threshold,
+        use_umap=use_umap,
     )
 
 

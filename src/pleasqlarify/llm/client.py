@@ -36,12 +36,27 @@ class CachedLLMClient:
 
 
 class OpenAIClient:  # pragma: no cover - needs network + 'llm' extra
-    """The paper's generator: GPT-4o via the OpenAI API (spec 03)."""
+    """The paper's generator: GPT-4o via an OpenAI-compatible API (spec 03).
 
-    def __init__(self, model: str = "gpt-4o"):
+    ``base_url`` / ``api_key`` default to the ``OPENAI_BASE_URL`` /
+    ``OPENAI_API_KEY`` environment variables so credentials are never hardcoded.
+    Works against any OpenAI-compatible gateway (e.g. an internal proxy).
+    """
+
+    def __init__(
+        self,
+        model: str = "gpt-4o",
+        base_url: str | None = None,
+        api_key: str | None = None,
+    ):
+        import os
+
         from openai import OpenAI
 
-        self._client = OpenAI()
+        self._client = OpenAI(
+            base_url=base_url or os.environ.get("OPENAI_BASE_URL") or None,
+            api_key=api_key or os.environ.get("OPENAI_API_KEY"),
+        )
         self._model = model
 
     def generate(self, prompt: str, n: int, temperature: float) -> list[str]:
