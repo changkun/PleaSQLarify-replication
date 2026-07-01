@@ -69,10 +69,23 @@ def run_benchmark(
     max_turns: int = 10,
     embedder: Embedder | None = None,
     seed: int = 0,
+    gold_k: bool = False,
 ) -> list[RunRow]:
+    """Run the five-condition benchmark.
+
+    ``gold_k`` selects the clustering-k assumption (spec 04 A5):
+    * False (default) — threshold-based k: the algorithm's real, deployable
+      setting (a tool never knows the gold count). This reproduces the paper's
+      directional result.
+    * True — force k = #gold interpretations (a literal reading of the paper's
+      "exactly specify the number of clusters"). On AMBROSIA's tiny databases this
+      makes functional clusters misalign with gold intents and does NOT reproduce
+      the win — a documented sensitivity finding (docs/02, docs/03).
+    """
     conditions = conditions or five_conditions(seed)
     out: list[RunRow] = []
     for sample in samples:
+        k = len(sample.gold_sqls) if gold_k else None
         for cond in conditions:
             for gi, gold_sql in enumerate(sample.gold_sqls):
                 session = build_session(
@@ -83,6 +96,7 @@ def run_benchmark(
                     embedder=embedder,
                     mode=cond.mode,
                     clustering=cond.clustering,
+                    k=k if cond.clustering else None,
                     results=sample.results,
                 )
                 assignment = assign_gold_intents(

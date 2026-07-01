@@ -1,0 +1,7 @@
+{
+  "Baseline Random + Atomic": -0.0,
+  "Baseline Max-Prob-First + Atomic": 0.4318194025848072,
+  "Baseline ERG + Atomic": -0.0,
+  "Ours: Clustering + EIG + Atomic": 0.2145591551764051,
+  "Ours: Clustering + EIG + Feature Grouping": 0.2145591551764051
+}

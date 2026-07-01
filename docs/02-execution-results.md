@@ -1,96 +1,122 @@
 # Execution Results
 
 Real-backend runs: **GPT-4o generation + `all-MiniLM-L6-v2` embeddings + UMAP** on
-the **real AMBROSIA** benchmark. Reproduce with
-`scripts/run_real_eval.py` (see `01-replication-notes.md`).
+the **real AMBROSIA** benchmark. Reproduce with `scripts/run_real_eval.py`.
+
+> **Headline:** the real backends and the full pipeline run end to end on real
+> AMBROSIA. On this **small subset the paper's headline directional advantage for
+> clustering-based repair does *not* cleanly reproduce** — the results are noisy
+> and, under our default assumptions, the atomic baselines often reach zero
+> gold-label entropy sooner than the clustering "ours" conditions. This section
+> reports the honest numbers and the diagnosed cause. (An earlier version of this
+> doc claimed a clean reproduction; that was an artifact of a loader bug — see
+> the note at the end.)
 
 ## 1. Real-stack smoke test (demo database)
 
-Running the full pipeline once with real backends on the paper's running example
-("What was the review of the drama film?"):
+Full pipeline once with real backends on the paper's running example ("What was
+the review of the drama film?"):
 
-- GPT-4o sampled `N=20` at `T=0.7` → **10** unique parseable candidates (identical
-  generations collapsed; `gen_counts` up to 6).
+- GPT-4o sampled `N=20 @ T=0.7` → **10** unique parseable candidates.
 - MiniLM output embeddings → **3 functional clusters**.
 - Top decision variable by information gain: `SELECT reviews.audiencereviews`
-  (IG ≈ 0.637).
-- UMAP produced real 2-D coordinates for the Action Space.
+  (IG ≈ 0.637); UMAP produced real 2-D Action-Space coordinates.
 
-Generation + full pipeline: ~38 s (20 sequential API calls); MiniLM first load ~70 s.
+On this cleanly-separable demo the algorithm behaves as intended and the offline
+directional test passes. The difficulty below is specific to AMBROSIA's tiny,
+near-degenerate database outputs.
 
-## 2. Quantitative evaluation on AMBROSIA (Figure 5)
+## 2. Quantitative evaluation on AMBROSIA
 
-**Setup.** 15 ambiguous test samples (5 each of *scope*, *attachment*, *vague*),
-GPT-4o `N=50 @ T=0.7` (cached), real MiniLM output similarity, the five conditions
-of spec 09, simulated-user oracle, max 10 turns, fixed candidate pool. 27
-(sample × gold-interpretation) runs total.
+**Setup.** 15 ambiguous test questions (5 each of *scope*, *attachment*, *vague*,
+unique questions), GPT-4o `N=50 @ T=0.7` (cached), real MiniLM output similarity,
+the five conditions of spec 09, simulated-user oracle, max 10 turns, fixed pool.
+**35** (question × gold-interpretation) runs; **20** had genuine initial ambiguity
+(entropy > 0 at turn 0).
 
-### Median gold-label entropy per turn (all 27 runs)
+### Mean gold-label entropy per turn (the 20 genuinely-ambiguous runs)
 
-| Condition | t0 | t1 | t2 | t3 | conv* |
-|---|---|---|---|---|---|
-| Baseline Random + Atomic | 0.530 | 0.154 | 0 | 0 | 1.0 |
-| Baseline Max-Prob-First + Atomic | 0.530 | 0.562 | 0.154 | 0 | 2.0 |
-| Baseline ERG + Atomic (= EIG, no clustering) | 0.530 | 0.257 | 0 | 0 | 1.0 |
-| **Ours: Clustering + EIG + Atomic** | 0.530 | **0.000** | 0 | 0 | 1.0 |
-| **Ours: Clustering + EIG + Feature Grouping** | 0.530 | **0.000** | 0 | 0 | 1.0 |
+| Condition | t0 | t1 | t2 | t3 |
+|---|---|---|---|---|
+| Baseline Random + Atomic | 0.570 | 0.366 | 0.342 | 0.172 |
+| Baseline ERG + Atomic (EIG, no clustering) | 0.570 | 0.475 | 0.262 | **0.080** |
+| Baseline Max-Prob-First + Atomic | 0.570 | 0.560 | 0.483 | 0.305 |
+| Ours: Clustering + EIG + Atomic | 0.570 | 0.521 | 0.228 | 0.144 |
+| Ours: Clustering + EIG + Feature Grouping | 0.570 | 0.521 | 0.261 | 0.144 |
 
-\* median first turn at which gold-label entropy reaches 0.
+### Mean "first turn reaching zero entropy" (10 = never, within 10 turns)
 
-### Mean gold-label entropy at turn 1 (the 15 runs with genuine initial ambiguity)
-
-Excluding runs where the model surfaced only one interpretation (entropy already 0):
-
-| Condition | mean entropy @ t1 |
+| Condition | mean first-zero turn |
 |---|---|
-| Baseline Max-Prob-First + Atomic | 0.541 |
-| Baseline ERG + Atomic | 0.535 |
-| Baseline Random + Atomic | 0.463 |
-| **Ours: Clustering + EIG + Atomic** | 0.335 |
-| **Ours: Clustering + EIG + Feature Grouping** | **0.327** |
+| Baseline Random + Atomic | **2.75** |
+| Baseline ERG + Atomic | **3.05** |
+| Ours: Clustering + EIG + Atomic | ~17 (frequently never) |
+| Ours: Clustering + EIG + Feature Grouping | ~17 (frequently never) |
+| Baseline Max-Prob-First + Atomic | ~18 (frequently never) |
 
-**Reading.** After one clarification turn, both clustering-based strategies have
-cut residual gold-label entropy roughly in half relative to the atomic baselines,
-and reach zero a turn earlier. This **reproduces the paper's directional Figure 5
-result**: clustering-based repair collapses semantic uncertainty faster than
-random / greedy / no-clustering baselines. The greedy *Max-Prob-First* baseline is
-consistently the slowest (median convergence 2.0), matching the paper's argument
-for information-gain-driven selection. Feature Grouping edges out Atomic
-(0.327 vs 0.335) — the paper's second ablation — though on these small databases
-(2–3 interpretations) the two clustering variants are close.
+**Reading (honest).**
+- The clustering "ours" conditions **reduce** gold-label entropy but frequently
+  **plateau above zero** and do not converge within 10 turns.
+- The atomic baselines *Random* and *ERG* reach zero sooner because, with
+  clustering off, each candidate query is its own intent, so the loop keeps
+  splitting until a single query — hence a single gold label — remains.
+- The one paper-consistent signal: greedy **Max-Prob-First is the worst**
+  baseline, supporting information-gain-driven selection over a greedy heuristic.
+- Confidence intervals are wide on 20 runs; treat all gaps as noisy. This is a
+  **non-reproduction at this scale**, not a refutation of the paper.
 
-See the reproduced figure: `docs/results/figure5_real.png` (2×3: entropy +
-functional similarity per turn per ambiguity type, 95% bootstrap CIs). Raw
-per-turn data: `docs/results/real_eval_results.csv`.
+### Diagnosed cause
+
+`gold-label entropy` reaches 0 only when the surviving candidates are
+gold-homogeneous. Our "ours" conditions terminate at a **single functional
+cluster** (spec 08, assumption **A12**), and on AMBROSIA's tiny databases
+(< 10 rows) different interpretations often produce **near-identical MiniLM output
+embeddings**, so a functional cluster is **not gold-pure** — the loop stops with
+residual gold-label uncertainty it cannot remove. Three flagged assumptions drive
+this: **A12** (terminate at cluster vs. single query), **A5** (clustering
+linkage/`k`), and **A14** (gold-intent assignment). This is exactly the
+assumption-sensitivity the spec deck exists to surface.
+
+### Clustering-`k` sensitivity (assumption A5)
+
+Forcing `k = #gold interpretations` ("exactly specify the number of clusters",
+spec 10) does **not** rescue the result — mean entropy at t1 stays high for "ours"
+(≈ 0.21) vs. Random/ERG (≈ 0.0). Data: `docs/results/goldk_sensitivity.json`.
+Coarser gold-`k` clusters align even less with gold intents than threshold-`k`.
 
 ## 3. Ambiguity-coverage finding (model collapse)
 
-Fraction of runs where GPT-4o's `N=50` pool spanned ≥ 2 gold interpretations
-(i.e. genuine ambiguity to resolve):
+Fraction of runs where GPT-4o's `N=50` pool spanned ≥ 2 gold interpretations:
 
 | Ambiguity type | runs | with genuine ambiguity |
 |---|---|---|
-| vague | 9 | **9 / 9** |
+| vague | 15 | 12 / 15 |
 | attachment | 10 | 6 / 10 |
-| scope | 8 | **0 / 8** |
+| scope | 10 | **2 / 10** |
 
-This is itself a result. For **scope** ambiguity, GPT-4o at `N=50` never sampled
-the minority interpretation on our subset — it collapsed to a single reading every
-time. This is exactly the failure mode PleaSQLarify is designed for ("systems
-sample the most probable interpretation"), and it is strongest for scope
-ambiguity. *Vague* column ambiguities were surfaced reliably; *attachment* sat in
-between.
+GPT-4o **usually collapses scope ambiguity** (only 2/10 surfaced ≥ 2
+interpretations) and often attachment, while reliably surfacing vague column
+ambiguity. This supports the paper's motivation (systems sample the most probable
+interpretation) and is a robust finding independent of the algorithm comparison.
+Data: `docs/results/coverage_by_type.json`.
 
-## 4. Caveats (do not over-read these numbers)
+## 4. Caveats
 
-- **Small scale:** 15 samples, one subset, one seed — a directional check, not the
-  paper's full-benchmark magnitudes. Larger runs are a `--per-type` change away.
-- **Small databases:** AMBROSIA DBs have < 10 rows/table by design, so functional
-  outputs are low-entropy and convergence is fast for every method; the *ordering*
-  of methods is the signal, not the absolute turn counts.
-- **Oracle-driven:** the simulated user answers optimally (paper's "optimal
-  clarification behavior"); this measures the algorithm, not human behavior (that
-  is what the spec 15 user study is for).
-- **Scope coverage:** with 0/8 scope runs showing ambiguity at this `N`, the scope
-  column of Figure 5 is uninformative on this subset; a larger sample or higher
-  temperature is needed to surface scope interpretations.
+- **Small scale, wide CIs:** 15 questions, one subset/seed — directional at best,
+  and here inconclusive-to-negative. `--per-type` scales it up.
+- **Tiny databases** make interpretation outputs embed similarly, which is the
+  crux of the clustering difficulty; larger databases would separate outputs more.
+- **Metric harshness:** "first reach exactly 0" penalizes methods that terminate
+  at functional equivalence; the per-turn entropy curves (`figure5_real.png`,
+  `real_eval_results.csv`) are the fuller picture.
+- **Oracle-driven** (optimal answers) — measures the algorithm, not humans.
+
+## Correction note
+
+An earlier committed version of this file (and a figure caption sent to the
+project owner) claimed the clustering conditions "collapse uncertainty faster —
+the paper's directional result." That was produced from results corrupted by a
+loader bug: one AMBROSIA database hosts several distinct ambiguous questions, and
+`sample_id` (the DB filename) collided across them, so runs overwrote each other.
+After fixing `sample_id` to be unique per question (and re-running), the clean
+result is the non-reproduction reported above.

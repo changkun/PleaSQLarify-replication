@@ -92,14 +92,34 @@ owning spec.
 
 ## D. Empirical observations from the real run
 
-See `02-execution-results.md` for numbers. Notable qualitative findings:
+See `02-execution-results.md` for the numbers. Key findings:
 
-- **Model collapse is real and measurable.** With small `N`, GPT-4o often samples
-  only the dominant interpretation, so some ambiguous questions surface *zero*
-  residual ambiguity in the candidate pool (gold-label entropy 0 at turn 0). This
-  is exactly the failure the paper motivates ("systems sample the most probable
-  interpretation"), and larger `N` surfaces more interpretations — which is why
-  the paper fixes `N = 50`.
-- On samples with genuine initial ambiguity, clustering-based repair reduces
-  gold-label entropy at least as fast as the baselines, reproducing the paper's
-  directional claim (magnitudes in `02-execution-results.md`).
+1. **A loader bug nearly produced a false positive.** One AMBROSIA database hosts
+   several distinct ambiguous questions; our first `sample_id` was the DB filename,
+   so different questions **collided** and their eval runs overwrote each other.
+   The corrupted results looked like a clean reproduction of the paper. Fixing
+   `sample_id` to be unique per question (and re-running) reversed that
+   conclusion. Lesson recorded here because it is the kind of silent data bug that
+   makes a replication *look* successful.
+2. **Model collapse is real, and strongest for scope.** GPT-4o at `N=50` surfaced
+   ≥ 2 interpretations in 12/15 *vague*, 6/10 *attachment*, but only **2/10
+   *scope*** questions. It usually samples one reading — exactly the failure the
+   paper motivates — and scope ambiguity is the hardest for it to surface. This is
+   robust and independent of the algorithm comparison.
+3. **The paper's clustering advantage does NOT cleanly reproduce on this subset.**
+   Under our default assumptions the atomic baselines (Random, ERG) drive
+   gold-label entropy to zero *sooner* than the clustering "ours" conditions,
+   which reduce entropy but often plateau above zero. Diagnosed cause: "ours"
+   terminates at a **single functional cluster** (A12), and on AMBROSIA's tiny
+   databases different interpretations embed near-identically, so clusters are not
+   gold-pure. This is a concrete demonstration that the flagged assumptions
+   **A12** (termination granularity), **A5** (clustering `k`), and **A14** (gold
+   assignment) are load-bearing — the whole point of the assumption register.
+4. **One paper-consistent signal:** greedy Max-Prob-First is the worst selection
+   policy, supporting information-gain-driven clarification.
+
+Net: the *machinery* reproduces (real GPT-4o + MiniLM + UMAP + AMBROSIA run end to
+end, and the demo with separable outputs shows the intended clustering advantage),
+but the paper's *quantitative magnitudes* do not, at this scale and under these
+assumptions. Reproducing them is future work that would sweep A5/A12/A14 and use
+larger databases — enabled, not done, by this scaffold.

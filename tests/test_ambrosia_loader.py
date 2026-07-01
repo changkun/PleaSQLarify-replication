@@ -25,6 +25,12 @@ def test_loads_filmmaking_samples():
         assert os.path.exists(s.db_path)
 
 
+def test_sample_ids_are_unique():
+    # one database hosts several distinct ambiguous questions; ids must not collide
+    ids = [s.sample_id for s in load_ambrosia(domain="Filmmaking")]
+    assert len(ids) == len(set(ids))
+
+
 def test_gold_queries_execute_and_differ():
     s = next(load_ambrosia(domain="Filmmaking"))
     outputs = [run_query(s.db_path, g.sql) for g in s.gold_queries]

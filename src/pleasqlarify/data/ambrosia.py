@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import ast
 import csv
+import hashlib
 import os
 import sqlite3
 from contextlib import closing
@@ -107,8 +108,16 @@ def load_ambrosia(
             db_path = os.path.join(root, row["db_file"])
             if not os.path.exists(db_path):
                 continue
+            # One database hosts several distinct ambiguous questions, so the DB
+            # filename is NOT a unique sample id — disambiguate with a short hash
+            # of the utterance (else different questions collide and overwrite each
+            # other's results).
+            db_stem = os.path.splitext(os.path.basename(row["db_file"]))[0]
+            q_hash = hashlib.blake2b(
+                row["ambig_question"].encode(), digest_size=3
+            ).hexdigest()
             yield AmbrosiaSample(
-                sample_id=os.path.splitext(os.path.basename(row["db_file"]))[0],
+                sample_id=f"{db_stem}#{q_hash}",
                 ambiguity_type=atype,  # type: ignore[arg-type]
                 utterance=row["ambig_question"],
                 db_path=db_path,

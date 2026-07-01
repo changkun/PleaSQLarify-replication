@@ -80,19 +80,21 @@ Two layers, deliberately separated:
 - **Real-backend, real-data validation** — the paper's actual backends were run:
   GPT-4o generation (via a configurable OpenAI-compatible endpoint),
   `all-MiniLM-L6-v2` embeddings, and UMAP, on the **real AMBROSIA** benchmark
-  (`load_ambrosia` is wired; the dataset is downloaded locally and gitignored, as
-  it is not redistributable). The 5-condition benchmark on 15 samples
-  **reproduces the directional Figure 5 result** — clustering-based repair cuts
-  gold-label entropy ~2× faster than the atomic baselines at turn 1 — and surfaces
-  a finding: GPT-4o collapses *scope* ambiguity (never surfaced it at N=50 on our
-  subset). Full write-up and the reproduced figure are in
-  [`docs/`](docs/) (`02-execution-results.md`, `docs/results/figure5_real.png`).
+  (`load_ambrosia` wired; dataset downloaded locally and gitignored, as it is not
+  redistributable). The full pipeline runs end to end. **The paper's headline
+  clustering advantage does *not* cleanly reproduce on this small subset** — under
+  our default assumptions the atomic baselines often reach zero gold-label entropy
+  sooner than the clustering conditions, which plateau because they terminate at a
+  single functional cluster that isn't gold-pure on AMBROSIA's tiny databases
+  (assumptions A12/A5/A14). Robust findings that *do* hold: GPT-4o mostly collapses
+  *scope* ambiguity (2/10 surfaced), and greedy selection is the worst baseline.
+  Honest write-up: [`docs/02-execution-results.md`](docs/02-execution-results.md),
+  [`docs/03-findings-and-decisions.md`](docs/03-findings-and-decisions.md).
 
-**Scope caveat:** the real run is a *directional* reproduction at small scale
-(15 samples, one subset/seed), not the paper's full-benchmark magnitudes. AMBROSIA
-databases are tiny by design, so absolute turn counts are small for every method —
-the *ordering* of methods is the signal. Scaling up is a `--per-type` change to
-`scripts/run_real_eval.py`.
+**Scope caveat:** small scale (15 questions, one seed), wide CIs — inconclusive-
+to-negative, not a refutation. AMBROSIA databases are tiny by design, which is the
+crux of the clustering difficulty. Reproducing the paper's magnitudes is future
+work (sweep A5/A12/A14, larger databases) — enabled, not done, by this scaffold.
 
 ## Status
 

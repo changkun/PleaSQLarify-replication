@@ -35,6 +35,13 @@ OUT = Path("docs/results")
 CACHE = Path("data/generations")
 
 
+def _median_entropy(rows, condition, turn):
+    import statistics as st
+
+    vals = [r.entropy for r in rows if r.condition == condition and r.turn == turn]
+    return st.median(vals) if vals else float("nan")
+
+
 def select_samples(per_type: int):
     picked = defaultdict(list)
     for s in load_ambrosia():  # whole test set, all domains
@@ -48,7 +55,9 @@ def select_samples(per_type: int):
 def generate_cache(sample, client, n, temperature, threads=8):
     """Sample the LLM n times (threaded) and cache raw completions on disk."""
     prompt = build_prompt(sample.utterance, sample.schema)
-    key = hashlib.blake2b(f"{sample.sample_id}|{n}|{prompt}".encode(), digest_size=12).hexdigest()
+    # Key by the prompt only (+ n): the prompt fully determines generation, so the
+    # cache is stable across sample-id changes and shared by identical questions.
+    key = hashlib.blake2b(f"{n}|{prompt}".encode(), digest_size=12).hexdigest()
     path = CACHE / f"{key}.json"
     if path.exists():
         raw = json.loads(path.read_text())
@@ -96,7 +105,32 @@ def main():
         )
 
     print("running benchmark with real MiniLM embeddings...")
-    rows = run_benchmark(eval_samples, embedder=embedder, max_turns=args.max_turns)
+    rows = run_benchmark(
+        eval_samples, embedder=embedder, max_turns=args.max_turns, gold_k=False
+    )
+    # sensitivity comparison: the gold-k clustering assumption (spec 04 A5)
+    rows_goldk = run_benchmark(
+        eval_samples, embedder=embedder, max_turns=args.max_turns, gold_k=True
+    )
+    goldk_t1 = {
+        c.name: _median_entropy(rows_goldk, c.name, 1) for c in five_conditions()
+    }
+    (OUT / "goldk_sensitivity.json").write_text(json.dumps(goldk_t1, indent=2))
+
+    # per-ambiguity-type initial-ambiguity coverage
+    t0 = defaultdict(dict)
+    for r in rows:
+        if r.turn == 0:
+            t0[r.ambiguity_type][(r.sample_id, r.gold)] = r.entropy
+    coverage = {
+        typ: {
+            "runs": len(d),
+            "with_ambiguity": sum(1 for v in d.values() if v > 1e-9),
+        }
+        for typ, d in t0.items()
+    }
+    (OUT / "coverage_by_type.json").write_text(json.dumps(coverage, indent=2))
+    print("initial-ambiguity coverage by type:", coverage)
 
     # tidy results
     with open(OUT / "real_eval_results.csv", "w", newline="") as fh:

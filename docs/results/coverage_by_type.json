@@ -1,0 +1,14 @@
+{
+  "attachment": {
+    "runs": 10,
+    "with_ambiguity": 6
+  },
+  "scope": {
+    "runs": 10,
+    "with_ambiguity": 2
+  },
+  "vague": {
+    "runs": 15,
+    "with_ambiguity": 12
+  }
+}
