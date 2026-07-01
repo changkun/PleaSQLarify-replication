@@ -70,27 +70,29 @@ while not s.terminated:
 print(s.final_query().sql)
 ```
 
-## Empirical validation gap (important)
+## Validation status
 
-The test suite proves the implementation is **internally consistent and behaves as
-the specs describe** — it does **not** yet prove the paper's *numbers* are
-reproduced. Specifically, still open:
+Two layers, deliberately separated:
 
-1. **Real AMBROSIA is not wired.** `load_ambrosia` raises `NotImplementedError`
-   until the dataset id/split and field→`AmbrosiaSample` mapping are pinned
-   (spec 01, F1). All runs so far use fixture/demo databases.
-2. **No real backends have executed.** GPT-4o generation, `all-MiniLM-L6-v2`
-   embeddings, and UMAP have never run here — only the deterministic offline
-   fallbacks.
-3. **The rendered Figure 5 is an illustrative offline smoke test**, not a
-   reproduction: it runs the tiny demo sample and (for layout) reuses it across
-   the three ambiguity-type columns. Reproducing the paper's finding requires
-   step 1 + 2 on the real per-type AMBROSIA samples.
+- **Internal consistency** — the offline test suite (52 tests) proves the
+  implementation behaves as the specs describe, deterministically and with no
+  network.
+- **Real-backend, real-data validation** — the paper's actual backends were run:
+  GPT-4o generation (via a configurable OpenAI-compatible endpoint),
+  `all-MiniLM-L6-v2` embeddings, and UMAP, on the **real AMBROSIA** benchmark
+  (`load_ambrosia` is wired; the dataset is downloaded locally and gitignored, as
+  it is not redistributable). The 5-condition benchmark on 15 samples
+  **reproduces the directional Figure 5 result** — clustering-based repair cuts
+  gold-label entropy ~2× faster than the atomic baselines at turn 1 — and surfaces
+  a finding: GPT-4o collapses *scope* ambiguity (never surfaced it at N=50 on our
+  subset). Full write-up and the reproduced figure are in
+  [`docs/`](docs/) (`02-execution-results.md`, `docs/results/figure5_real.png`).
 
-The directional check that clustering converges no slower than the baselines
-holds on the demo, and the grouped-vs-atomic ablation is exercised by a dedicated
-test — but confirming the *magnitudes* in Figure 5 is the clearly-labeled next
-step, enabled (not done) by this scaffold.
+**Scope caveat:** the real run is a *directional* reproduction at small scale
+(15 samples, one subset/seed), not the paper's full-benchmark magnitudes. AMBROSIA
+databases are tiny by design, so absolute turn counts are small for every method —
+the *ordering* of methods is the signal. Scaling up is a `--per-type` change to
+`scripts/run_real_eval.py`.
 
 ## Status
 
