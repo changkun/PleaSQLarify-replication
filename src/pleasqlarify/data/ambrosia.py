@@ -53,24 +53,24 @@ def schema_from_sqlite(db_path: str) -> DbSchema:
 
 
 def load_ambrosia(dataset_id: str = "cambridgeltl/AMBROSIA", split: str = "test"):
-    """Yield :class:`AmbrosiaSample` from the HuggingFace dataset (optional extra).
+    """Load real AMBROSIA samples (optional extra) — NOT YET WIRED.
 
-    Requires ``pip install .[data]``. The concrete dataset id / split is an
-    undocumented decision (spec 01, F1) resolved here to a default; override via
-    the arguments. This is intentionally thin — the mapping from AMBROSIA fields
-    to :class:`AmbrosiaSample` is finalized once the exact schema is pinned.
+    This is an explicit, unimplemented boundary, not a working loader. The paper
+    cites AMBROSIA (ref [35]) but does not give a concrete HuggingFace id/split or
+    field schema (spec 01, F1), so the mapping from dataset rows to
+    :class:`AmbrosiaSample` (db file materialization, gold-query fields, ambiguity
+    type) must be pinned against the actual dataset before the real quantitative
+    evaluation (spec 10 / Figure 5) can run on non-toy data.
+
+    Until then the pipeline and tests use fixture / demo databases. See the
+    "empirical validation gap" note in the project README.
     """
-    try:
-        from datasets import load_dataset  # type: ignore
-    except ImportError as exc:  # pragma: no cover - optional dependency
-        raise RuntimeError(
-            "AMBROSIA loading needs the 'data' extra: pip install .[data]"
-        ) from exc
-
-    ds = load_dataset(dataset_id, split=split)  # pragma: no cover - network
-    for i, row in enumerate(ds):  # pragma: no cover - network
-        # Field names are pinned when F1 is resolved against the real dataset.
-        yield row, i
+    raise NotImplementedError(
+        "Real AMBROSIA loading is not wired yet (spec 01, F1). Pin the HuggingFace "
+        "dataset id/split and field mapping against the real dataset, then "
+        "materialize each sample's SQLite DB and its gold queries into an "
+        f"AmbrosiaSample. Requested: dataset_id={dataset_id!r}, split={split!r}."
+    )
 
 
 __all__ = ["GoldQuery", "AmbrosiaSample", "schema_from_sqlite", "load_ambrosia"]

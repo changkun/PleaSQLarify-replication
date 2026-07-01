@@ -70,6 +70,28 @@ while not s.terminated:
 print(s.final_query().sql)
 ```
 
+## Empirical validation gap (important)
+
+The test suite proves the implementation is **internally consistent and behaves as
+the specs describe** — it does **not** yet prove the paper's *numbers* are
+reproduced. Specifically, still open:
+
+1. **Real AMBROSIA is not wired.** `load_ambrosia` raises `NotImplementedError`
+   until the dataset id/split and field→`AmbrosiaSample` mapping are pinned
+   (spec 01, F1). All runs so far use fixture/demo databases.
+2. **No real backends have executed.** GPT-4o generation, `all-MiniLM-L6-v2`
+   embeddings, and UMAP have never run here — only the deterministic offline
+   fallbacks.
+3. **The rendered Figure 5 is an illustrative offline smoke test**, not a
+   reproduction: it runs the tiny demo sample and (for layout) reuses it across
+   the three ambiguity-type columns. Reproducing the paper's finding requires
+   step 1 + 2 on the real per-type AMBROSIA samples.
+
+The directional check that clustering converges no slower than the baselines
+holds on the demo, and the grouped-vs-atomic ablation is exercised by a dedicated
+test — but confirming the *magnitudes* in Figure 5 is the clearly-labeled next
+step, enabled (not done) by this scaffold.
+
 ## Status
 
 See [`specs/README.md`](specs/README.md) for the spec deck and the consolidated

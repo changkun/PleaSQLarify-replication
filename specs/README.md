@@ -67,7 +67,10 @@ Decided with the project owner:
 
 ## Sequential spec list
 
-Execute top-to-bottom. Status is maintained by the `wf-spec-*` tooling.
+Execute top-to-bottom. **Implementation status (2026-07-01):** specs 01–14 are
+implemented in `src/pleasqlarify/` and covered by an offline test suite
+(`tests/`, 48 tests, ~90% coverage); spec 15 is a study protocol to be executed
+later against the built system. See the top-level [`README.md`](../README.md).
 
 | # | Spec | Delivers | Status |
 |---|---|---|---|
