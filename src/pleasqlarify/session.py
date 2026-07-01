@@ -78,6 +78,10 @@ class Session:
     def _survivors(self) -> ActionSpace:
         return [self.candidates[self._index[cid]] for cid in self.surviving_ids]
 
+    def surviving_indices(self) -> list[int]:
+        """Positions of surviving candidates in ``candidates`` (aligned with ``sim``)."""
+        return [self._index[cid] for cid in self.surviving_ids]
+
     def _recompute(self) -> None:
         survivors = self._survivors()
         if self.clustering:
