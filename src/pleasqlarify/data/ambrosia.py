@@ -8,11 +8,21 @@ against locally-built fixture databases (see ``tests/conftest.py``).
 
 from __future__ import annotations
 
+import ast
+import csv
+import os
 import sqlite3
 from contextlib import closing
 from dataclasses import dataclass, field
+from typing import Iterator, Optional
 
 from ..model.types import AmbiguityType, DbSchema
+
+# The real AMBROSIA download (spec 01, F1). It is NOT on HuggingFace; it is a
+# password-protected direct download the authors ask not to be redistributed, so
+# it is kept out of version control (see .gitignore) and read from this local
+# extraction directory. Override with the PLEASQL_AMBROSIA_ROOT env var.
+DEFAULT_AMBROSIA_ROOT = os.environ.get("PLEASQL_AMBROSIA_ROOT", "data/ambrosia")
 
 
 @dataclass
@@ -52,25 +62,65 @@ def schema_from_sqlite(db_path: str) -> DbSchema:
     return schema
 
 
-def load_ambrosia(dataset_id: str = "cambridgeltl/AMBROSIA", split: str = "test"):
-    """Load real AMBROSIA samples (optional extra) — NOT YET WIRED.
+def load_ambrosia(
+    root: str = DEFAULT_AMBROSIA_ROOT,
+    split: str = "test",
+    ambiguity_type: Optional[AmbiguityType] = None,
+    domain: Optional[str] = None,
+    limit: Optional[int] = None,
+) -> Iterator[AmbrosiaSample]:
+    """Yield ambiguous :class:`AmbrosiaSample` from a local AMBROSIA extraction.
 
-    This is an explicit, unimplemented boundary, not a working loader. The paper
-    cites AMBROSIA (ref [35]) but does not give a concrete HuggingFace id/split or
-    field schema (spec 01, F1), so the mapping from dataset rows to
-    :class:`AmbrosiaSample` (db file materialization, gold-query fields, ambiguity
-    type) must be pinned against the actual dataset before the real quantitative
-    evaluation (spec 10 / Figure 5) can run on non-toy data.
-
-    Until then the pipeline and tests use fixture / demo databases. See the
-    "empirical validation gap" note in the project README.
+    Resolves spec 01, F1: the benchmark ships as a CSV (``data/ambrosia.csv``)
+    plus per-database SQLite files. Each ambiguous row carries the ambiguous
+    utterance (``ambig_question``), the list of gold interpretation queries
+    (``ambig_queries``, a Python-list literal), the ambiguity type, the domain,
+    and a relative ``db_file`` path. We read only the fields we need with the
+    stdlib csv module (no pandas dependency).
     """
-    raise NotImplementedError(
-        "Real AMBROSIA loading is not wired yet (spec 01, F1). Pin the HuggingFace "
-        "dataset id/split and field mapping against the real dataset, then "
-        "materialize each sample's SQLite DB and its gold queries into an "
-        f"AmbrosiaSample. Requested: dataset_id={dataset_id!r}, split={split!r}."
-    )
+    csv_path = os.path.join(root, "data", "ambrosia.csv")
+    if not os.path.exists(csv_path):
+        raise FileNotFoundError(
+            f"AMBROSIA CSV not found at {csv_path}. Download the benchmark from "
+            "https://ambrosia-benchmark.github.io/ and extract it to "
+            f"{root!r} (or set PLEASQL_AMBROSIA_ROOT)."
+        )
+    csv.field_size_limit(10_000_000)  # db_dump fields are large
+    count = 0
+    with open(csv_path, newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if str(row.get("is_ambiguous")).lower() != "true":
+                continue
+            if split and row.get("split") != split:
+                continue
+            atype = row.get("ambig_type")
+            if ambiguity_type and atype != ambiguity_type:
+                continue
+            if domain and row.get("domain") != domain:
+                continue
+            try:
+                gold_sqls = ast.literal_eval(row["ambig_queries"])
+            except (ValueError, SyntaxError):
+                continue
+            if not isinstance(gold_sqls, list) or len(gold_sqls) < 2:
+                continue
+            db_path = os.path.join(root, row["db_file"])
+            if not os.path.exists(db_path):
+                continue
+            yield AmbrosiaSample(
+                sample_id=os.path.splitext(os.path.basename(row["db_file"]))[0],
+                ambiguity_type=atype,  # type: ignore[arg-type]
+                utterance=row["ambig_question"],
+                db_path=db_path,
+                schema=schema_from_sqlite(db_path),
+                gold_queries=[
+                    GoldQuery(intent_label=f"interp{i}", sql=q)
+                    for i, q in enumerate(gold_sqls)
+                ],
+            )
+            count += 1
+            if limit and count >= limit:
+                return
 
 
 __all__ = ["GoldQuery", "AmbrosiaSample", "schema_from_sqlite", "load_ambrosia"]
