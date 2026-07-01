@@ -4,13 +4,16 @@ Real-backend runs: **GPT-4o generation + `all-MiniLM-L6-v2` embeddings + UMAP** 
 the **real AMBROSIA** benchmark. Reproduce with `scripts/run_real_eval.py`.
 
 > **Headline:** the real backends and the full pipeline run end to end on real
-> AMBROSIA. On this **small subset the paper's headline directional advantage for
-> clustering-based repair does *not* cleanly reproduce** — the results are noisy
-> and, under our default assumptions, the atomic baselines often reach zero
-> gold-label entropy sooner than the clustering "ours" conditions. This section
-> reports the honest numbers and the diagnosed cause. (An earlier version of this
-> doc claimed a clean reproduction; that was an artifact of a loader bug — see
-> the note at the end.)
+> AMBROSIA. On this small subset the result is **inconclusive**: by the paper's
+> per-turn entropy metric the clustering "ours" conditions are **mid-pack** (they
+> reduce gold-label entropy, comparable to Random and better than greedy, but
+> behind EIG-on-atomic and without reaching zero), so the paper's *clear*
+> multi-turn separation is not reproduced at this scale — but neither do the
+> baselines decisively win. CIs are wide on 20 runs. Two earlier headlines were
+> wrong in opposite directions: a "clean reproduction" (loader-bug artifact) and a
+> "baselines win / ours stalls" (over-read of a harsh first-zero-turn statistic).
+> This version leads with the entropy curves and a mechanism verified by
+> inspecting survivors.
 
 ## 1. Real-stack smoke test (demo database)
 
@@ -44,38 +47,44 @@ the five conditions of spec 09, simulated-user oracle, max 10 turns, fixed pool.
 | Ours: Clustering + EIG + Atomic | 0.570 | 0.521 | 0.228 | 0.144 |
 | Ours: Clustering + EIG + Feature Grouping | 0.570 | 0.521 | 0.261 | 0.144 |
 
-### Mean "first turn reaching zero entropy" (10 = never, within 10 turns)
+**Reading (by the paper's per-turn entropy metric).**
+- Every condition reduces gold-label entropy over turns. By t3 the ranking is
+  ERG (0.080) < **Ours** (0.144) < Random (0.172) < Max-Prob-First (0.305).
+- The clustering "ours" conditions are **mid-pack**: slower at t1 (they spend the
+  first turn on a cluster-level split) but they catch up by t2–t3, beating Random
+  and clearly beating greedy, while trailing EIG-on-atomic. They do **not** reach
+  zero within 10 turns (see mechanism below).
+- Paper-consistent signal: greedy **Max-Prob-First is the worst**, supporting
+  information-gain-driven selection.
+- **Do not** read the "first turn reaching zero" statistic as a ranking: because
+  "ours" plateaus just above zero, that metric assigns it a large sentinel and
+  makes it look far worse than the entropy curves justify. It is a symptom of the
+  mechanism below, not a fair comparison.
 
-| Condition | mean first-zero turn |
-|---|---|
-| Baseline Random + Atomic | **2.75** |
-| Baseline ERG + Atomic | **3.05** |
-| Ours: Clustering + EIG + Atomic | ~17 (frequently never) |
-| Ours: Clustering + EIG + Feature Grouping | ~17 (frequently never) |
-| Baseline Max-Prob-First + Atomic | ~18 (frequently never) |
+### Diagnosed cause (verified by inspecting survivors)
 
-**Reading (honest).**
-- The clustering "ours" conditions **reduce** gold-label entropy but frequently
-  **plateau above zero** and do not converge within 10 turns.
-- The atomic baselines *Random* and *ERG* reach zero sooner because, with
-  clustering off, each candidate query is its own intent, so the loop keeps
-  splitting until a single query — hence a single gold label — remains.
-- The one paper-consistent signal: greedy **Max-Prob-First is the worst**
-  baseline, supporting information-gain-driven selection over a greedy heuristic.
-- Confidence intervals are wide on 20 runs; treat all gaps as noisy. This is a
-  **non-reproduction at this scale**, not a refutation of the paper.
+`gold-label entropy` reaches 0 only when survivors are gold-homogeneous. Our
+"ours" conditions terminate at a **single functional cluster** (spec 08, **A12**).
+We dumped the survivors at termination for nontrivial *Feature Grouping* runs to
+check *why* entropy stays positive. Example (`vague_2cols_duration`, "profit per
+operation and when it occurred", termination entropy 0.61, 10 survivors):
 
-### Diagnosed cause
+- The survivors have **6 genuinely distinct output tables** — `TotalMonths`,
+  `MonthsSinceStart`, `OperationYears+OperationMonths`, `OperationDurationMonths`,
+  … — mapping across gold interpretations 1 and 2.
+- These are **not** near-identical coin-flips; they are real, different SQL
+  interpretations. Yet functional clustering **merged them into one cluster**,
+  because MiniLM rates these structurally-similar small tables (shared
+  `OperationID | Profit | …` prefix, identical profit values) at cosine ≥ 0.9.
 
-`gold-label entropy` reaches 0 only when the surviving candidates are
-gold-homogeneous. Our "ours" conditions terminate at a **single functional
-cluster** (spec 08, assumption **A12**), and on AMBROSIA's tiny databases
-(< 10 rows) different interpretations often produce **near-identical MiniLM output
-embeddings**, so a functional cluster is **not gold-pure** — the loop stops with
-residual gold-label uncertainty it cannot remove. Three flagged assumptions drive
-this: **A12** (terminate at cluster vs. single query), **A5** (clustering
-linkage/`k`), and **A14** (gold-intent assignment). This is exactly the
-assumption-sensitivity the spec deck exists to surface.
+So the residual entropy is a **real** effect: on AMBROSIA's tiny,
+structurally-similar outputs, output-embedding clustering **over-merges** distinct
+interpretations, so "ours" terminates at a "functional cluster" that actually
+spans multiple gold intents. This is a concrete, verified demonstration that the
+flagged clustering-similarity assumptions (**A4** serialization/metric, **A5**
+linkage/`k`) and termination (**A12**) are load-bearing — the point of the spec
+deck. It is *not* an assignment-noise artifact (the survivor outputs genuinely
+differ).
 
 ### Clustering-`k` sensitivity (assumption A5)
 
@@ -102,8 +111,8 @@ Data: `docs/results/coverage_by_type.json`.
 
 ## 4. Caveats
 
-- **Small scale, wide CIs:** 15 questions, one subset/seed — directional at best,
-  and here inconclusive-to-negative. `--per-type` scales it up.
+- **Small scale, wide CIs:** 15 questions, one subset/seed — inconclusive at this
+  scale (neither a reproduction nor a refutation). `--per-type` scales it up.
 - **Tiny databases** make interpretation outputs embed similarly, which is the
   crux of the clustering difficulty; larger databases would separate outputs more.
 - **Metric harshness:** "first reach exactly 0" penalizes methods that terminate

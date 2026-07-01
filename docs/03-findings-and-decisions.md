@@ -106,20 +106,29 @@ See `02-execution-results.md` for the numbers. Key findings:
    *scope*** questions. It usually samples one reading — exactly the failure the
    paper motivates — and scope ambiguity is the hardest for it to surface. This is
    robust and independent of the algorithm comparison.
-3. **The paper's clustering advantage does NOT cleanly reproduce on this subset.**
-   Under our default assumptions the atomic baselines (Random, ERG) drive
-   gold-label entropy to zero *sooner* than the clustering "ours" conditions,
-   which reduce entropy but often plateau above zero. Diagnosed cause: "ours"
-   terminates at a **single functional cluster** (A12), and on AMBROSIA's tiny
-   databases different interpretations embed near-identically, so clusters are not
-   gold-pure. This is a concrete demonstration that the flagged assumptions
-   **A12** (termination granularity), **A5** (clustering `k`), and **A14** (gold
-   assignment) are load-bearing — the whole point of the assumption register.
+3. **The paper's clustering advantage is INCONCLUSIVE on this subset (not a clean
+   reproduction, not a refutation).** By the paper's per-turn entropy metric the
+   clustering "ours" conditions are **mid-pack** (t3: ours 0.144, vs Random 0.172,
+   greedy 0.305, EIG-atomic 0.080): they reduce entropy, beat Random and greedy,
+   trail EIG-on-atomic, and do not reach zero within 10 turns. The paper's *clear*
+   multi-turn separation is not reproduced at this scale; CIs are wide.
+   - **Mechanism, verified by dumping survivors at termination:** "ours" stops at
+     a single functional cluster (A12) that still spans gold intents, because on
+     AMBROSIA's tiny, structurally-similar tables MiniLM rates **genuinely
+     distinct** outputs (6 distinct duration computations in one example) at cosine
+     ≥ 0.9 and **over-merges** them. Confirmed *real* (survivor outputs differ),
+     not assignment noise. So the flagged clustering assumptions **A4**
+     (serialization/metric), **A5** (linkage/`k`), and **A12** (termination) are
+     load-bearing — the point of the assumption register.
+   - Two earlier headlines were both wrong: a "clean reproduction" (loader-bug
+     artifact) and a "baselines win / ours stalls" (over-read of a harsh
+     first-zero-turn statistic). The entropy curves say *inconclusive*.
 4. **One paper-consistent signal:** greedy Max-Prob-First is the worst selection
    policy, supporting information-gain-driven clarification.
 
 Net: the *machinery* reproduces (real GPT-4o + MiniLM + UMAP + AMBROSIA run end to
-end, and the demo with separable outputs shows the intended clustering advantage),
-but the paper's *quantitative magnitudes* do not, at this scale and under these
-assumptions. Reproducing them is future work that would sweep A5/A12/A14 and use
-larger databases — enabled, not done, by this scaffold.
+end; the demo with separable outputs shows the intended clustering advantage), but
+the paper's *quantitative magnitudes* are inconclusive at this scale under these
+assumptions. The verified over-merging mechanism points to concrete next steps
+(finer clustering / lower similarity threshold A5, output serialization A4, larger
+databases) — enabled, not done, by this scaffold.
