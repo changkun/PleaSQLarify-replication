@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PleaSQLarify (replication)</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>PleaSQLarify <span class="sub">visual pragmatic repair for text-to-SQL</span></h1>
+    <div class="utterance-bar">
+      <input id="utterance" type="text" readonly placeholder="Start the demo to load an utterance" />
+      <button id="demo-btn">Start demo</button>
+      <span id="status"></span>
+    </div>
+  </header>
+
+  <main>
+    <section id="action-space" class="panel">
+      <h2>1 · Action Space</h2>
+      <p class="hint">LLM interpretations, positioned by output similarity. Red = would be
+        <em>kept</em> by the current decision; blue = excluded. Click a glyph to filter.</p>
+      <svg id="as-svg" viewBox="0 0 320 300" preserveAspectRatio="xMidYMid meet"></svg>
+    </section>
+
+    <section id="decision-space" class="panel">
+      <h2>2 · Decision Space</h2>
+      <p class="hint">The most <em>informative</em> clarification (highest information gain).</p>
+      <div id="ds-body"></div>
+    </section>
+
+    <section id="predicted" class="panel">
+      <h2>3 · Predicted Query</h2>
+      <div id="pq-body"></div>
+      <h2>4 · Predicted Output</h2>
+      <div id="po-body"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
