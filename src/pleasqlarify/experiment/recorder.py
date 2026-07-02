@@ -131,6 +131,25 @@ class RunRecorder:
     def result_path(self, name: str) -> Path:
         return self.root / "results" / name
 
+    def total_token_usage(self) -> dict:
+        """Sum token usage + call count across all captured LLM call bodies."""
+        prompt = completion = total = calls = 0
+        for f in (self.root / "llm").rglob("call_*.json"):
+            try:
+                usage = (json.loads(f.read_text()).get("response") or {}).get("usage") or {}
+            except Exception:
+                continue
+            calls += 1
+            prompt += usage.get("prompt_tokens", 0) or 0
+            completion += usage.get("completion_tokens", 0) or 0
+            total += usage.get("total_tokens", 0) or 0
+        return {
+            "llm_calls": calls,
+            "prompt_tokens": prompt,
+            "completion_tokens": completion,
+            "total_tokens": total,
+        }
+
     def write_manifest(self, manifest: dict) -> None:
         _write_json(self.root / "manifest.json", manifest)
 

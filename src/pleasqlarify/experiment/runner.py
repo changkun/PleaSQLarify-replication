@@ -98,9 +98,15 @@ def _generate(config, recorder, sample, prompt, live_client_factory) -> list[str
     model = config.model
     if config.resume:
         cached = recorder.load_completions(model, sample.sample_id)
-        if cached is not None:
+        if cached is not None and len(cached) == config.n:
             recorder.log(f"[resume] reuse {len(cached)} completions for {sample.sample_id}")
             return cached
+        if cached is not None:
+            # resume + changed --n: cache is stale, regenerate to avoid silent reuse
+            recorder.log(
+                f"[resume] cache size {len(cached)} != n={config.n} for "
+                f"{sample.sample_id}; regenerating"
+            )
     client = live_client_factory()
     sink = recorder.llm_sink(model, sample.sample_id)
     if isinstance(client, OpenAIClient) and config.threads > 1:
@@ -258,6 +264,7 @@ def run_experiment(
         "n_samples": len(samples),
         "sample_ids": [s.sample_id for s in samples],
         "n_runs": len({(r[2], r[3]) for r in all_rows}),
+        "token_usage": recorder.total_token_usage(),
         "config": asdict(config),
     })
     recorder.log("done")
