@@ -48,6 +48,22 @@ uv run pytest                      # run the test suite
 uv pip install -e ".[all]"
 ```
 
+## Scaling & provenance
+
+`scripts/run_experiment.py` runs the benchmark at any scale and captures **full
+provenance** — every LLM request/response body and every intermediate result —
+into a partitioned per-run folder (`experiments/<run_id>/`), with resume support.
+
+```bash
+export OPENAI_BASE_URL=... OPENAI_API_KEY=...
+uv run python scripts/run_experiment.py --model gpt-4o --per-type 5 --n 50
+uv run python scripts/run_experiment.py --offline --per-type 1 --n 8   # no network
+```
+
+Layout, captured-body examples, and scaling guidance:
+[`docs/04-experiments.md`](docs/04-experiments.md). (`experiments/` is gitignored —
+the bodies embed non-redistributable AMBROSIA content.)
+
 ## Pipeline (Section 5–6)
 
 ```
