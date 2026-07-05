@@ -90,6 +90,9 @@ variable + `oracle_answer`. This is enough to replay or audit any interaction.
 
 ## Data handling
 
-`experiments/` is **gitignored**: the request bodies embed AMBROSIA schemas and
-questions, and AMBROSIA is not redistributable (see `03-findings-and-decisions.md`
-§A2). Keep runs locally; share only aggregate `results/` if needed.
+By project-owner choice, `experiments/` **is versioned** (full provenance,
+including raw request/response bodies) — see [`experiments/NOTICE.md`](../experiments/NOTICE.md).
+Caveat: these bodies embed AMBROSIA-derived content, and AMBROSIA is not
+redistributable (see `03-findings-and-decisions.md` §A2), so **review the NOTICE
+before making this repository public**. No API keys/credentials are ever stored in
+the artifacts (env-only). The raw dataset (`data/ambrosia/`) stays gitignored.

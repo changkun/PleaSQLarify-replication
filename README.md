@@ -61,8 +61,10 @@ uv run python scripts/run_experiment.py --offline --per-type 1 --n 8   # no netw
 ```
 
 Layout, captured-body examples, and scaling guidance:
-[`docs/04-experiments.md`](docs/04-experiments.md). (`experiments/` is gitignored —
-the bodies embed non-redistributable AMBROSIA content.)
+[`docs/04-experiments.md`](docs/04-experiments.md). Runs under `experiments/` are
+versioned with full provenance; the bodies embed AMBROSIA-derived content, so
+**read [`experiments/NOTICE.md`](experiments/NOTICE.md) before making this repo
+public.** No credentials are ever stored in artifacts (env-only).
 
 ## Pipeline (Section 5–6)
 
