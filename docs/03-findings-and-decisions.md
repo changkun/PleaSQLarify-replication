@@ -101,17 +101,17 @@ See `02-execution-results.md` for the numbers. Key findings:
    `sample_id` to be unique per question (and re-running) reversed that
    conclusion. Lesson recorded here because it is the kind of silent data bug that
    makes a replication *look* successful.
-2. **Model collapse is real, and strongest for scope.** GPT-4o at `N=50` surfaced
-   ≥ 2 interpretations in 12/15 *vague*, 6/10 *attachment*, but only **2/10
-   *scope*** questions. It usually samples one reading — exactly the failure the
-   paper motivates — and scope ambiguity is the hardest for it to surface. This is
-   robust and independent of the algorithm comparison.
-3. **The paper's clustering advantage is INCONCLUSIVE on this subset (not a clean
-   reproduction, not a refutation).** By the paper's per-turn entropy metric the
-   clustering "ours" conditions are **mid-pack** (t3: ours 0.144, vs Random 0.172,
-   greedy 0.305, EIG-atomic 0.080): they reduce entropy, beat Random and greedy,
-   trail EIG-on-atomic, and do not reach zero within 10 turns. The paper's *clear*
-   multi-turn separation is not reproduced at this scale; CIs are wide.
+2. **Model collapse is real, and strongest for scope** (150-sample run). GPT-4o at
+   `N=50` surfaced ≥ 2 interpretations in only **33%** of ambiguous questions
+   overall — 40% *vague*, 32% *attachment*, **22% *scope***. It usually samples one
+   reading — exactly the failure the paper motivates — and scope ambiguity is the
+   hardest for it to surface. Robust and well-powered.
+3. **The paper's clustering advantage does NOT reproduce (150 samples, 114
+   genuinely-ambiguous runs).** The clustering "ours" conditions are **consistently
+   slightly behind** the atomic baselines at every turn and resolve fully in **71%**
+   of ambiguous runs vs **86–89%** for the baselines. The strongest condition is
+   **EIG on atomic features without clustering** — information gain helps, adding
+   functional clustering hurts. Gaps are modest but consistent across 114 runs.
    - **Mechanism, verified by dumping survivors at termination:** "ours" stops at
      a single functional cluster (A12) that still spans gold intents, because on
      AMBROSIA's tiny, structurally-similar tables MiniLM rates **genuinely
@@ -122,13 +122,16 @@ See `02-execution-results.md` for the numbers. Key findings:
      load-bearing — the point of the assumption register.
    - Two earlier headlines were both wrong: a "clean reproduction" (loader-bug
      artifact) and a "baselines win / ours stalls" (over-read of a harsh
-     first-zero-turn statistic). The entropy curves say *inconclusive*.
-4. **One paper-consistent signal:** greedy Max-Prob-First is the worst selection
-   policy, supporting information-gain-driven clarification.
+     first-zero-turn statistic).
+4. **"Greedy is worst" does not survive scaling.** On the 20-run subset greedy
+   Max-Prob-First looked clearly worst; across 114 runs it is comparable to Random
+   and to the clustering conditions. The only stable ordering is EIG-on-atomic
+   best, clustering conditions behind.
 
 Net: the *machinery* reproduces (real GPT-4o + MiniLM + UMAP + AMBROSIA run end to
 end; the demo with separable outputs shows the intended clustering advantage), but
-the paper's *quantitative magnitudes* are inconclusive at this scale under these
-assumptions. The verified over-merging mechanism points to concrete next steps
-(finer clustering / lower similarity threshold A5, output serialization A4, larger
-databases) — enabled, not done, by this scaffold.
+the paper's *quantitative advantage for clustering does not*, at 150-sample scale
+under these assumptions — clustering modestly hurts on AMBROSIA's tiny databases.
+The verified over-merging mechanism points to concrete next steps (finer clustering
+/ lower similarity threshold A5, output serialization A4, larger databases) —
+enabled, not done, by this scaffold.

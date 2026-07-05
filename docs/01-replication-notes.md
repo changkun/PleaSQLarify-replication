@@ -23,7 +23,7 @@ was produced, what it covers, and how to reproduce it.
 | Paper artifact | Status |
 |---|---|
 | §5–6 pragmatic-repair algorithm (generate → cluster → atoms → decision vars → info gain → loop) | implemented + tested |
-| §7 quantitative evaluation (Figure 5: entropy + similarity per turn, bootstrap CIs) | implemented + **run on real AMBROSIA + GPT-4o + MiniLM**; result **inconclusive** at this scale (clustering conditions mid-pack, no clear separation) — honest analysis in `02-execution-results.md` |
+| §7 quantitative evaluation (Figure 5: entropy + similarity per turn, bootstrap CIs) | implemented + **run on real AMBROSIA + GPT-4o + MiniLM at 150-sample scale**; the paper's clustering advantage **does not reproduce** (clustering resolves 71% of ambiguous runs vs 86–89% for atomic baselines) — honest, well-powered analysis in `02-execution-results.md` |
 | §8 visual interface (Action/Decision/Predicted views) | implemented (FastAPI + browser SPA) |
 | §9 user study | protocol reproduced as an executable spec (`specs/study/15`), not run |
 

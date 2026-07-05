@@ -1,19 +1,23 @@
 # Execution Results
 
 Real-backend runs: **GPT-4o generation + `all-MiniLM-L6-v2` embeddings + UMAP** on
-the **real AMBROSIA** benchmark. Reproduce with `scripts/run_real_eval.py`.
+the **real AMBROSIA** benchmark. The primary result below is a **150-sample run**
+(`experiments/gpt4o_per50_n50/`, 7,500 GPT-4o calls, 1.6M tokens); reproduce with
+`scripts/run_experiment.py` (see `04-experiments.md`).
 
-> **Headline:** the real backends and the full pipeline run end to end on real
-> AMBROSIA. On this small subset the result is **inconclusive**: by the paper's
-> per-turn entropy metric the clustering "ours" conditions are **mid-pack** (they
-> reduce gold-label entropy, comparable to Random and better than greedy, but
-> behind EIG-on-atomic and without reaching zero), so the paper's *clear*
-> multi-turn separation is not reproduced at this scale — but neither do the
-> baselines decisively win. CIs are wide on 20 runs. Two earlier headlines were
-> wrong in opposite directions: a "clean reproduction" (loader-bug artifact) and a
-> "baselines win / ours stalls" (over-read of a harsh first-zero-turn statistic).
-> This version leads with the entropy curves and a mechanism verified by
-> inspecting survivors.
+> **Headline (150 samples, 114 genuinely-ambiguous runs).** The paper's clustering
+> advantage **does not reproduce** on AMBROSIA. By the per-turn entropy metric the
+> clustering "ours" conditions are **consistently slightly behind** the
+> atomic-feature baselines at every turn, and reach zero gold-label entropy in
+> **71%** of ambiguous runs vs **86–89%** for the baselines. The strongest
+> condition is **EIG on atomic features without clustering** (the "ERG" baseline).
+> The gaps are modest but consistent across 114 runs (much better powered than the
+> earlier 20-run subset). The cause is a **verified over-merging mechanism**: on
+> AMBROSIA's tiny, structurally-similar tables MiniLM merges genuinely-distinct
+> outputs, so functional clustering terminates on a cluster spanning gold intents.
+> (Two earlier headlines were wrong — a loader-bug "clean reproduction" and an
+> over-read "baselines win / ours stalls"; and "greedy is worst" does not survive
+> at scale.)
 
 ## 1. Real-stack smoke test (demo database)
 
@@ -31,35 +35,44 @@ near-degenerate database outputs.
 
 ## 2. Quantitative evaluation on AMBROSIA
 
-**Setup.** 15 ambiguous test questions (5 each of *scope*, *attachment*, *vague*,
-unique questions), GPT-4o `N=50 @ T=0.7` (cached), real MiniLM output similarity,
-the five conditions of spec 09, simulated-user oracle, max 10 turns, fixed pool.
-**35** (question × gold-interpretation) runs; **20** had genuine initial ambiguity
-(entropy > 0 at turn 0).
+**Setup.** 150 ambiguous test questions (50 each of *scope*, *attachment*,
+*vague*), GPT-4o `N=50 @ T=0.7` (7,500 calls, 1.6M tokens, full bodies captured),
+real MiniLM output similarity, the five conditions of spec 09, simulated-user
+oracle, max 10 turns, fixed pool. **350** (question × gold-interpretation) runs;
+**114** had genuine initial ambiguity (entropy > 0 at turn 0).
 
-### Mean gold-label entropy per turn (the 20 genuinely-ambiguous runs)
+### Mean gold-label entropy per turn (the 114 genuinely-ambiguous runs)
 
-| Condition | t0 | t1 | t2 | t3 |
-|---|---|---|---|---|
-| Baseline Random + Atomic | 0.570 | 0.366 | 0.342 | 0.172 |
-| Baseline ERG + Atomic (EIG, no clustering) | 0.570 | 0.475 | 0.262 | **0.080** |
-| Baseline Max-Prob-First + Atomic | 0.570 | 0.560 | 0.483 | 0.305 |
-| Ours: Clustering + EIG + Atomic | 0.570 | 0.521 | 0.228 | 0.144 |
-| Ours: Clustering + EIG + Feature Grouping | 0.570 | 0.521 | 0.261 | 0.144 |
+| Condition | t0 | t1 | t2 | t3 | t5 |
+|---|---|---|---|---|---|
+| Baseline ERG + Atomic (EIG, no clustering) | 0.499 | 0.381 | 0.263 | **0.124** | **0.097** |
+| Baseline Random + Atomic | 0.499 | 0.373 | 0.217 | 0.169 | 0.115 |
+| Baseline Max-Prob-First + Atomic | 0.499 | 0.368 | 0.303 | 0.199 | 0.143 |
+| Ours: Clustering + EIG + Atomic | 0.499 | 0.404 | 0.246 | 0.204 | 0.143 |
+| Ours: Clustering + EIG + Feature Grouping | 0.499 | 0.404 | 0.243 | 0.192 | 0.143 |
 
-**Reading (by the paper's per-turn entropy metric).**
-- Every condition reduces gold-label entropy over turns. By t3 the ranking is
-  ERG (0.080) < **Ours** (0.144) < Random (0.172) < Max-Prob-First (0.305).
-- The clustering "ours" conditions are **mid-pack**: slower at t1 (they spend the
-  first turn on a cluster-level split) but they catch up by t2–t3, beating Random
-  and clearly beating greedy, while trailing EIG-on-atomic. They do **not** reach
-  zero within 10 turns (see mechanism below).
-- Paper-consistent signal: greedy **Max-Prob-First is the worst**, supporting
-  information-gain-driven selection.
-- **Do not** read the "first turn reaching zero" statistic as a ranking: because
-  "ours" plateaus just above zero, that metric assigns it a large sentinel and
-  makes it look far worse than the entropy curves justify. It is a symptom of the
-  mechanism below, not a fair comparison.
+### Fraction of ambiguous runs reaching zero entropy within 10 turns
+
+| Condition | reached 0 |
+|---|---|
+| Baseline ERG + Atomic | **101/114 = 0.89** |
+| Baseline Max-Prob-First + Atomic | 100/114 = 0.88 |
+| Baseline Random + Atomic | 98/114 = 0.86 |
+| Ours: Clustering + EIG + Atomic | 81/114 = 0.71 |
+| Ours: Clustering + EIG + Feature Grouping | 81/114 = 0.71 |
+
+**Reading.**
+- The clustering "ours" conditions sit **at or slightly above** the atomic
+  baselines at every turn (higher = more residual uncertainty), and resolve fully
+  in **71%** of ambiguous runs vs **86–89%** for the atomic baselines. So the
+  paper's clustering advantage **does not reproduce** on AMBROSIA — clustering
+  modestly *hurts* here.
+- **EIG on atomic features without clustering (ERG) is the strongest** — pure
+  information gain helps; adding functional clustering is what costs accuracy.
+- At scale, greedy Max-Prob-First is **not** clearly the worst (it was on the tiny
+  subset); the only stable ordering is ERG best, clustering conditions behind.
+- Gaps are modest (≈0.02–0.08 nats per turn; ≈15pp on the reach-zero rate) but
+  **consistent across 114 runs**, so more trustworthy than the earlier 20-run read.
 
 ### Diagnosed cause (verified by inspecting survivors)
 
@@ -89,36 +102,37 @@ differ).
 ### Clustering-`k` sensitivity (assumption A5)
 
 Forcing `k = #gold interpretations` ("exactly specify the number of clusters",
-spec 10) does **not** rescue the result — mean entropy at t1 stays high for "ours"
-(≈ 0.21) vs. Random/ERG (≈ 0.0). Data: `docs/results/goldk_sensitivity.json`.
-Coarser gold-`k` clusters align even less with gold intents than threshold-`k`.
+spec 10) does **not** rescue the result — coarser gold-`k` clusters align even
+less with gold intents than threshold-`k`. (Measured on the earlier 15-sample run;
+`docs/results/goldk_sensitivity.json`.)
 
 ## 3. Ambiguity-coverage finding (model collapse)
 
-Fraction of runs where GPT-4o's `N=50` pool spanned ≥ 2 gold interpretations:
+Fraction of the 150-sample runs where GPT-4o's `N=50` pool spanned ≥ 2 gold
+interpretations:
 
 | Ambiguity type | runs | with genuine ambiguity |
 |---|---|---|
-| vague | 15 | 12 / 15 |
-| attachment | 10 | 6 / 10 |
-| scope | 10 | **2 / 10** |
+| vague | 150 | 60 / 150 = 40% |
+| attachment | 100 | 32 / 100 = 32% |
+| scope | 100 | **22 / 100 = 22%** |
 
-GPT-4o **usually collapses scope ambiguity** (only 2/10 surfaced ≥ 2
-interpretations) and often attachment, while reliably surfacing vague column
-ambiguity. This supports the paper's motivation (systems sample the most probable
-interpretation) and is a robust finding independent of the algorithm comparison.
-Data: `docs/results/coverage_by_type.json`.
+GPT-4o most often collapses to a single reading: even at `N=50` only **33%** of
+ambiguous questions surfaced ≥ 2 interpretations overall, and **scope** is the
+hardest to surface (22%), *vague* the easiest (40%). This supports the paper's
+motivation (systems sample the most probable interpretation) and is a robust,
+well-powered finding independent of the algorithm comparison. Data:
+`experiments/gpt4o_per50_n50/results/coverage_by_type.json`.
 
 ## 4. Caveats
 
-- **Small scale, wide CIs:** 15 questions, one subset/seed — inconclusive at this
-  scale (neither a reproduction nor a refutation). `--per-type` scales it up.
+- **One seed/subset** (first 50 per type). Gaps are modest though consistent
+  across 114 runs; a multi-seed run would tighten them.
 - **Tiny databases** make interpretation outputs embed similarly, which is the
   crux of the clustering difficulty; larger databases would separate outputs more.
-- **Metric harshness:** "first reach exactly 0" penalizes methods that terminate
-  at functional equivalence; the per-turn entropy curves (`figure5_real.png`,
-  `real_eval_results.csv`) are the fuller picture.
 - **Oracle-driven** (optimal answers) — measures the algorithm, not humans.
+- The per-turn entropy curves (`experiments/gpt4o_per50_n50/results/figure5.png`)
+  are the fuller picture behind the summary tables.
 
 ## Correction note
 

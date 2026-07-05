@@ -99,16 +99,16 @@ Two layers, deliberately separated:
   GPT-4o generation (via a configurable OpenAI-compatible endpoint),
   `all-MiniLM-L6-v2` embeddings, and UMAP, on the **real AMBROSIA** benchmark
   (`load_ambrosia` wired; dataset downloaded locally and gitignored, as it is not
-  redistributable). The full pipeline runs end to end. **Result: inconclusive at
-  this scale** — by the paper's per-turn entropy metric the clustering conditions
-  are *mid-pack* (they reduce entropy, beat Random and greedy, trail EIG-on-atomic,
-  and don't reach zero), so the paper's clear separation is neither reproduced nor
-  refuted here. A verified mechanism explains the plateau: on AMBROSIA's tiny,
-  structurally-similar tables MiniLM **over-merges genuinely-distinct outputs**
-  (cosine ≥ 0.9), so functional clustering terminates on a cluster spanning gold
-  intents (assumptions A4/A5/A12). Robust findings that *do* hold: GPT-4o mostly
-  collapses *scope* ambiguity (2/10 surfaced), and greedy selection is the worst
-  baseline. Honest write-up:
+  redistributable). The full pipeline runs end to end at **150-sample scale**
+  (7,500 GPT-4o calls, 1.6M tokens, full provenance captured). **The paper's
+  clustering advantage does not reproduce:** across 114 genuinely-ambiguous runs
+  the clustering conditions are consistently slightly behind the atomic-feature
+  baselines (resolve 71% of runs vs 86–89%); EIG-on-atomic is strongest. A
+  **verified mechanism** explains it: on AMBROSIA's tiny, structurally-similar
+  tables MiniLM **over-merges genuinely-distinct outputs** (cosine ≥ 0.9), so
+  functional clustering terminates on a cluster spanning gold intents (A4/A5/A12).
+  Robust independent finding: GPT-4o mostly collapses ambiguity (only 33% of
+  questions surfaced ≥ 2 interpretations; scope hardest at 22%). Honest write-up:
   [`docs/02-execution-results.md`](docs/02-execution-results.md),
   [`docs/03-findings-and-decisions.md`](docs/03-findings-and-decisions.md).
 
