@@ -25,11 +25,30 @@ def filter_action_space(
     return [c for c in candidates if consistent(c, variable, value)]
 
 
-def is_terminated(intents: IntentSet, ranked: list[DecisionVariable]) -> bool:
-    """Terminate on a single functional class or no informative variable (A12)."""
+TERMINATION_RULES = ("cluster_or_uninformative", "uninformative_only")
+
+
+def is_terminated(
+    intents: IntentSet,
+    ranked: list[DecisionVariable],
+    rule: str = "cluster_or_uninformative",
+) -> bool:
+    """Whether the repair loop should stop (assumption **A12**).
+
+    * ``cluster_or_uninformative`` (default, the paper's reading) - stop once the
+      survivors form a single functional class, or nothing informative is left.
+    * ``uninformative_only`` - ignore the cluster count and keep asking while any
+      variable still has positive information gain. This matters when clustering
+      **over-merges**: a single cluster can still span several gold intents, and
+      the default rule stops there while questions remain that would separate them.
+    """
+    if rule == "uninformative_only":
+        return not any(v.ig > 1e-12 for v in ranked)
+    if rule != "cluster_or_uninformative":
+        raise ValueError(f"unknown termination rule: {rule!r}")
     if len(intents) <= 1:
         return True
     return not any(v.ig > 1e-12 for v in ranked)
 
 
-__all__ = ["consistent", "filter_action_space", "is_terminated"]
+__all__ = ["consistent", "filter_action_space", "is_terminated", "TERMINATION_RULES"]

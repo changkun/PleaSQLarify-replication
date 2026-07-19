@@ -21,16 +21,28 @@ import numpy as np
 from ..model.types import Candidate, Cluster, IntentSet
 
 
+LINKAGES = ("average", "complete", "single")
+
+
 def _agglomerate(
-    dist: np.ndarray, k: int | None, threshold: float
+    dist: np.ndarray, k: int | None, threshold: float, linkage: str = "average"
 ) -> list[list[int]]:
     n = dist.shape[0]
     if n == 0:
         return []
     clusters: list[list[int]] = [[i] for i in range(n)]
 
+    if linkage == "average":
+        combine = np.mean
+    elif linkage == "complete":
+        combine = np.max      # merges only when *every* pair is close: resists over-merging
+    elif linkage == "single":
+        combine = np.min      # chains through any one close pair: merges most eagerly
+    else:
+        raise ValueError(f"unknown linkage: {linkage!r}")
+
     def cluster_distance(a: list[int], b: list[int]) -> float:
-        return float(np.mean([dist[i, j] for i in a for j in b]))
+        return float(combine([dist[i, j] for i in a for j in b]))
 
     target = k if k is not None else 1
     while len(clusters) > target:
@@ -59,11 +71,12 @@ def cluster_candidates(
     sim: np.ndarray,
     k: int | None = None,
     threshold: float = 0.1,
+    linkage: str = "average",
 ) -> IntentSet:
     """Cluster candidates by output similarity; sets ``candidate.cluster_id``."""
     dist = 1.0 - sim
     np.fill_diagonal(dist, 0.0)
-    groups = _agglomerate(dist, k=k, threshold=threshold)
+    groups = _agglomerate(dist, k=k, threshold=threshold, linkage=linkage)
 
     intents: IntentSet = []
     for cid, members in enumerate(groups):
@@ -78,4 +91,4 @@ def cluster_candidates(
     return intents
 
 
-__all__ = ["cluster_candidates"]
+__all__ = ["cluster_candidates", "LINKAGES"]

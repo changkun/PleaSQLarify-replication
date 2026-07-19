@@ -27,19 +27,45 @@ from ..model.types import Candidate, ResultTable
 _SENTINEL = "\x00NO_RESULT\x00"
 
 
-def serialize_result(rt: ResultTable, max_chars: int = 4000) -> str:
+# A4 serialization styles (spec 04). ``header_rows`` is the documented default;
+# the others are the alternatives the assumption register lists, exposed so the
+# A4 axis can be swept without editing code.
+SerializationStyle = str  # "header_rows" | "values_only" | "columns_only" | "cells_sorted"
+SERIALIZATION_STYLES = ("header_rows", "values_only", "columns_only", "cells_sorted")
+
+
+def serialize_result(
+    rt: ResultTable, max_chars: int = 4000, style: SerializationStyle = "header_rows"
+) -> str:
     """Deterministic text rendering of a result table for embedding (spec 04, A3).
 
-    Header line of column names, then each (canonically pre-sorted, spec 01)
-    row rendered ``col=value`` joined by ``; ``. Length-capped deterministically.
+    Styles (assumption **A4**, all deterministic and length-capped):
+
+    * ``header_rows`` (default) - header line of column names, then each
+      (canonically pre-sorted, spec 01) row rendered ``col=value``.
+    * ``values_only`` - rows without column names, so two queries that project the
+      same values under different aliases embed identically and column-name
+      overlap cannot inflate similarity.
+    * ``columns_only`` - the header alone: purely structural similarity.
+    * ``cells_sorted`` - the sorted set of distinct ``col=value`` cells, so row
+      order and row count cannot dominate the embedding.
     """
     if rt.is_error or rt.is_empty:
         return _SENTINEL
-    header = "|".join(rt.columns)
-    lines = [header]
-    for row in rt.rows:
-        lines.append("; ".join(f"{c}={v}" for c, v in zip(rt.columns, row)))
-    text = "\n".join(lines)
+    if style == "columns_only":
+        text = "|".join(rt.columns)
+    elif style == "values_only":
+        text = "\n".join("; ".join(str(v) for v in row) for row in rt.rows)
+    elif style == "cells_sorted":
+        cells = {f"{c}={v}" for row in rt.rows for c, v in zip(rt.columns, row)}
+        text = "; ".join(sorted(cells))
+    elif style == "header_rows":
+        lines = ["|".join(rt.columns)]
+        for row in rt.rows:
+            lines.append("; ".join(f"{c}={v}" for c, v in zip(rt.columns, row)))
+        text = "\n".join(lines)
+    else:
+        raise ValueError(f"unknown serialization style: {style!r}")
     return text[:max_chars]
 
 
@@ -91,11 +117,16 @@ class MiniLMEmbedder:  # pragma: no cover - optional heavy dependency
 
 
 def similarity_matrix(
-    candidates: list[Candidate], embedder: Embedder | None = None
+    candidates: list[Candidate],
+    embedder: Embedder | None = None,
+    style: SerializationStyle = "header_rows",
 ) -> np.ndarray:
     """Build the symmetric functional-similarity matrix S = cosine(outputs)."""
     embedder = embedder or DeterministicEmbedder()
-    texts = [serialize_result(c.result or ResultTable(error="unrun")) for c in candidates]
+    texts = [
+        serialize_result(c.result or ResultTable(error="unrun"), style=style)
+        for c in candidates
+    ]
     vecs = embedder.embed(texts)
     # embeddings are L2-normalized, so the Gram matrix is cosine similarity
     sim = vecs @ vecs.T
@@ -108,6 +139,8 @@ def similarity_matrix(
 
 __all__ = [
     "serialize_result",
+    "SERIALIZATION_STYLES",
+    "SerializationStyle",
     "Embedder",
     "DeterministicEmbedder",
     "MiniLMEmbedder",

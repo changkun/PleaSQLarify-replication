@@ -56,6 +56,8 @@ class Session:
     clustering: bool = True
     k: Optional[int] = None
     threshold: float = 0.1
+    linkage: str = "average"                      # A5 axis
+    termination: str = "cluster_or_uninformative"  # A12 axis
     use_umap: bool = False  # Action Space projection backend (spec 12)
 
     # ---- turn state (derived; recomputed each turn) ----
@@ -89,7 +91,7 @@ class Session:
             idx = [self._index[cid] for cid in self.surviving_ids]
             sub = self.sim[np.ix_(idx, idx)]
             self.intents = cluster_candidates(
-                survivors, sub, k=self.k, threshold=self.threshold
+                survivors, sub, k=self.k, threshold=self.threshold, linkage=self.linkage
             )
         else:
             # baselines without clustering: each surviving query is its own intent
@@ -108,7 +110,7 @@ class Session:
     # ------------------------------------------------------------- loop ops
     @property
     def terminated(self) -> bool:
-        return is_terminated(self.intents, self.ranked)
+        return is_terminated(self.intents, self.ranked, rule=self.termination)
 
     def next_variable(self) -> Optional[DecisionVariable]:
         if self.terminated:
@@ -186,12 +188,19 @@ def build_session(
     clustering: bool = True,
     k: Optional[int] = None,
     threshold: float = 0.1,
+    linkage: str = "average",
+    termination: str = "cluster_or_uninformative",
+    serialization: str = "header_rows",
     use_umap: bool = False,
     results: Optional[dict[str, ResultTable]] = None,
+    sim: Optional[np.ndarray] = None,
 ) -> Session:
     """Run steps 1-4 to build an initial :class:`Session`.
 
     ``results`` lets tests inject precomputed outputs to avoid needing a live DB.
+    ``sim`` injects a precomputed similarity matrix (index-aligned with the
+    generated candidates), so the A4/A5/A12 sweep can embed once per
+    serialization and reuse S across every cell and condition.
     """
     candidates = generate_candidates(
         utterance, schema, client, n=n, temperature=temperature
@@ -204,7 +213,8 @@ def build_session(
         else:
             c.result = ResultTable(error="no database")
     vocab = extract_features(candidates, schema)
-    sim = similarity_matrix(candidates, embedder)
+    if sim is None:
+        sim = similarity_matrix(candidates, embedder, style=serialization)
     return Session(
         utterance=utterance,
         schema=schema,
@@ -217,6 +227,8 @@ def build_session(
         clustering=clustering,
         k=k,
         threshold=threshold,
+        linkage=linkage,
+        termination=termination,
         use_umap=use_umap,
     )
 
