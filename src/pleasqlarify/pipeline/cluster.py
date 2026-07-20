@@ -37,12 +37,52 @@ def authors_k(n_survivors: int, target_cluster_size: int = TARGET_CLUSTER_SIZE,
     return max(MIN_K, min(max_k, int(round(n_survivors / target_cluster_size)) or MIN_K))
 
 
+def _agglomerate_scipy(
+    dist: np.ndarray, k: int | None, threshold: float, linkage: str
+) -> list[list[int]] | None:
+    """SciPy-backed agglomeration — the authors' path, and O(n^2) rather than O(n^3).
+
+    Their ``hierarchical_clusters_from_similarity`` uses
+    ``scipy.cluster.hierarchy.linkage(squareform(1 - S), method=...)`` and cuts with
+    ``fcluster``. Our pure-numpy fallback below is equivalent for the linkages we
+    expose but is far too slow for their ~95-candidate pools re-clustered each turn.
+
+    Returns ``None`` if SciPy is unavailable, so the caller can fall back.
+    """
+    try:
+        from scipy.cluster.hierarchy import fcluster, linkage as scipy_linkage
+        from scipy.spatial.distance import squareform
+    except ImportError:  # pragma: no cover - scipy ships with the real stack
+        return None
+
+    n = dist.shape[0]
+    if n < 2:
+        return [[i] for i in range(n)]
+    sym = (dist + dist.T) / 2.0
+    np.fill_diagonal(sym, 0.0)
+    np.clip(sym, 0.0, None, out=sym)
+    Z = scipy_linkage(squareform(sym, checks=False), method=linkage)
+    if k is not None:
+        labels = fcluster(Z, t=max(1, min(int(k), n)), criterion="maxclust")
+    else:
+        labels = fcluster(Z, t=threshold, criterion="distance")
+    groups: dict[int, list[int]] = {}
+    for idx, lab in enumerate(labels):
+        groups.setdefault(int(lab), []).append(idx)
+    return sorted(groups.values(), key=min)
+
+
 def _agglomerate(
     dist: np.ndarray, k: int | None, threshold: float, linkage: str = "average"
 ) -> list[list[int]]:
+    if linkage not in LINKAGES:
+        raise ValueError(f"unknown linkage: {linkage!r}")
     n = dist.shape[0]
     if n == 0:
         return []
+    fast = _agglomerate_scipy(dist, k, threshold, linkage)
+    if fast is not None:
+        return fast
     clusters: list[list[int]] = [[i] for i in range(n)]
 
     if linkage == "average":

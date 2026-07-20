@@ -42,8 +42,24 @@ def test_gold_intents_separate_into_clusters():
     assert ids["o0"] != ids["a0"]
 
 
-def test_fixed_k_mode():
+def test_fixed_k_mode_yields_at_most_k_clusters():
+    """`k` is an upper bound, not an exact count — the authors' `fcluster` semantics.
+
+    With `criterion="maxclust"` scipy cuts the dendrogram at a threshold, so merges
+    that TIE at the same distance are taken together and the result can have fewer
+    than k clusters. These five outputs tie at 0.25, so k=2 collapses to 1.
+    """
     cands = [_cand(f"c{i}", ["x"], [(i,)]) for i in range(5)]
     sim = similarity_matrix(cands, DeterministicEmbedder())
     intents = cluster_candidates(cands, sim, k=2)
-    assert len(intents) == 2
+    assert 1 <= len(intents) <= 2
+    # every candidate is assigned exactly once, whatever the cut
+    assert sorted(m for c in intents for m in c.member_ids) == [f"c{i}" for i in range(5)]
+
+
+def test_k_equal_to_n_gives_singletons():
+    """Relied on by the no-clustering baselines, which pass k = len(survivors)."""
+    cands = [_cand(f"c{i}", ["x"], [(i,)]) for i in range(5)]
+    intents = cluster_candidates(cands, np.eye(5), k=5)
+    assert len(intents) == 5
+    assert all(len(c.member_ids) == 1 for c in intents)
