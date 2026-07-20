@@ -49,8 +49,8 @@ THRESHOLDS = (0.02, 0.05, 0.10, 0.20, 0.40)
 LINKAGES = ("average", "complete", "single")
 TERMINATIONS = ("cluster_or_uninformative", "uninformative_only")
 
-OURS = "Ours: Clustering + EIG + Feature Grouping"
-REFERENCE = "Baseline ERG + Atomic"
+OURS = "Clustering + EIG + Feature Grouping"
+REFERENCE = "Baseline EIG + Atomic Features"
 
 
 @dataclass(frozen=True)

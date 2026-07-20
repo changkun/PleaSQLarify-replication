@@ -72,7 +72,7 @@ def test_evaluation_reproduces_directional_result(demo):
         MockLLMClient(DEMO_COMPLETIONS),
     )
     rows = run_benchmark([sample], max_turns=8)
-    ours = mean_convergence_turn(rows, "Ours: Clustering + EIG + Feature Grouping")
+    ours = mean_convergence_turn(rows, "Clustering + EIG + Feature Grouping")
     base = mean_convergence_turn(rows, "Baseline Random + Atomic")
     # clustering-based repair resolves uncertainty no slower than the baseline
     assert ours <= base

@@ -14,14 +14,20 @@ import numpy as np
 
 
 def gold_label_entropy(surviving_ids: list[str], gold_assignment: dict[str, int]) -> float:
-    """H(q_t): residual semantic uncertainty over gold intents (spec 10)."""
+    """H(q_t): residual semantic uncertainty over gold intents, in **bits** (A15).
+
+    Base 2 and un-normalized, matching the authors' supplementary implementation
+    (``compute_label_entropy(..., normalize=False)`` in their ``run_eval.py``,
+    which uses ``np.log2``). Our earlier runs used natural log; every entropy
+    number therefore rescales by ``1/ln 2`` (~1.4427) relative to those.
+    """
     if not surviving_ids:
         return 0.0
     counts = Counter(gold_assignment[cid] for cid in surviving_ids if cid in gold_assignment)
     total = sum(counts.values())
     if total == 0:
         return 0.0
-    return -sum((n / total) * math.log(n / total) for n in counts.values())
+    return -sum((n / total) * math.log2(n / total) for n in counts.values())
 
 
 def mean_pairwise_similarity(indices: list[int], sim: np.ndarray) -> float:

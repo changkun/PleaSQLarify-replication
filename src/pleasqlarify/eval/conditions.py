@@ -67,12 +67,12 @@ class Condition:
 def five_conditions(seed: int = 0) -> list[Condition]:
     """The five conditions compared in Figure 5 (spec 09)."""
     return [
-        Condition("Baseline Random + Atomic", False, "atomic", make_random_policy(seed)),
-        Condition("Baseline Max-Prob-First + Atomic", False, "atomic", max_prob_first_policy),
+        Condition("Baseline Random + Atomic Features", False, "atomic", make_random_policy(seed)),
+        Condition("Baseline Max-Prob-First + Atomic Features", False, "atomic", max_prob_first_policy),
         # 'ERG' in the Fig 5 legend == EIG without clustering (spec 09/10, A16).
-        Condition("Baseline ERG + Atomic", False, "atomic", eig_policy),
-        Condition("Ours: Clustering + EIG + Atomic", True, "atomic", eig_policy),
-        Condition("Ours: Clustering + EIG + Feature Grouping", True, "grouped", eig_policy),
+        Condition("Baseline EIG + Atomic Features", False, "atomic", eig_policy),
+        Condition("Clustering + EIG + Atomic Features", True, "atomic", eig_policy),
+        Condition("Clustering + EIG + Feature Grouping", True, "grouped", eig_policy),
     ]
 
 

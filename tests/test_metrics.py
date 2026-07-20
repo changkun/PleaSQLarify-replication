@@ -9,12 +9,22 @@ from pleasqlarify.eval.metrics import (
 )
 
 
-def test_gold_label_entropy():
-    # two survivors, one per gold label -> maximal uncertainty ln 2
-    assert math.isclose(gold_label_entropy(["a", "b"], {"a": 0, "b": 1}), math.log(2))
+def test_gold_label_entropy_is_in_bits():
+    """A15: base 2, matching the authors' compute_label_entropy (np.log2)."""
+    # two survivors, one per gold label -> maximal uncertainty = exactly 1 bit
+    assert math.isclose(gold_label_entropy(["a", "b"], {"a": 0, "b": 1}), 1.0)
+    # four survivors over four labels -> 2 bits
+    assert math.isclose(
+        gold_label_entropy(list("abcd"), {"a": 0, "b": 1, "c": 2, "d": 3}), 2.0
+    )
     # both same label -> zero uncertainty
     assert gold_label_entropy(["a", "b"], {"a": 0, "b": 0}) == 0.0
     assert gold_label_entropy([], {}) == 0.0
+
+
+def test_gold_label_entropy_unassigned_candidates_are_excluded():
+    # candidates with no gold label do not contribute (authors drop one class too)
+    assert gold_label_entropy(["a", "b", "z"], {"a": 0, "b": 1}) == 1.0
 
 
 def test_mean_pairwise_similarity():
