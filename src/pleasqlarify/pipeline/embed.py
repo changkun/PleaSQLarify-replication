@@ -164,17 +164,56 @@ def aligned_similarity(
     return float(np.mean(sim[ri, ci]))
 
 
+def _aligned_from_vectors(va: np.ndarray, vb: np.ndarray, pad: np.ndarray) -> float:
+    """Hungarian-aligned mean cosine of two row-embedding blocks, padded to equal length."""
+    na, nb = len(va), len(vb)
+    if na == 0 and nb == 0:
+        return 1.0
+    if na == 0 or nb == 0:
+        return 0.0
+    n = max(na, nb)
+    if na < n:
+        va = np.vstack([va, np.repeat(pad, n - na, axis=0)])
+    if nb < n:
+        vb = np.vstack([vb, np.repeat(pad, n - nb, axis=0)])
+    sim = np.clip(va @ vb.T, -1.0, 1.0)
+    try:
+        from scipy.optimize import linear_sum_assignment
+
+        ri, ci = linear_sum_assignment(1.0 - sim)
+    except ImportError:  # pragma: no cover
+        ri = ci = np.arange(n)
+    return float(np.mean(sim[ri, ci]))
+
+
 def aligned_similarity_matrix(
     candidates: list[Candidate], embedder: Embedder | None = None
 ) -> np.ndarray:
-    """S built with the authors' row-alignment metric (A4)."""
+    """S built with the authors' row-alignment metric (A4).
+
+    Each candidate's rows are embedded **once** and reused across all pairs. The
+    naive form re-embeds both tables per pair, which is O(n^2) model calls
+    (~4,500 for a 95-candidate pool) instead of O(n).
+    """
     embedder = embedder or DeterministicEmbedder()
     rows = [serialize_rows(c.result) for c in candidates]
     n = len(rows)
+
+    # one batched embed call for every row of every candidate, plus the pad token
+    flat: list[str] = [PAD_TOKEN]
+    spans: list[tuple[int, int]] = []
+    for r in rows:
+        start = len(flat)
+        flat.extend(r)
+        spans.append((start, len(flat)))
+    vecs = embedder.embed(flat)
+    pad = vecs[0:1]
+    blocks = [vecs[s:e] for s, e in spans]
+
     sim = np.eye(n)
     for i in range(n):
         for j in range(i + 1, n):
-            sim[i, j] = sim[j, i] = aligned_similarity(rows[i], rows[j], embedder)
+            sim[i, j] = sim[j, i] = _aligned_from_vectors(blocks[i], blocks[j], pad)
     np.clip(sim, 0.0, 1.0, out=sim)
     np.fill_diagonal(sim, 1.0)
     return sim

@@ -104,3 +104,22 @@ def test_shared_column_names_no_longer_inflate_similarity_of_distinct_outputs():
     aligned = aligned_similarity_matrix([a, b], emb)[0, 1]
     whole_table = similarity_matrix([a, b], emb, style="header_rows")[0, 1]
     assert aligned < whole_table
+
+
+def test_cached_matrix_matches_the_naive_pairwise_computation():
+    """The batched/cached matrix must be numerically identical to the naive form."""
+    emb = DeterministicEmbedder()
+    cands = [
+        _cand("a", _rt(["X"], [("p",), ("q",)])),
+        _cand("b", _rt(["X"], [("q",), ("p",)])),
+        _cand("c", _rt(["X"], [("z",), ("y",), ("w",)])),
+        _cand("d", ResultTable(error="boom")),
+        _cand("e", _rt(["X"], [("p",)])),
+    ]
+    fast = aligned_similarity_matrix(cands, emb)
+    rows = [serialize_rows(c.result) for c in cands]
+    naive = np.eye(len(cands))
+    for i in range(len(cands)):
+        for j in range(i + 1, len(cands)):
+            naive[i, j] = naive[j, i] = aligned_similarity(rows[i], rows[j], emb)
+    assert np.allclose(fast, naive, atol=1e-9)
