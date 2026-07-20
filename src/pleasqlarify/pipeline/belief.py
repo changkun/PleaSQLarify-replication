@@ -32,7 +32,10 @@ def frequency_belief(candidates: ActionSpace, intents: IntentSet) -> Belief:
 
 def entropy(belief: Belief) -> float:
     """Shannon entropy H(p_t) in nats."""
-    return -sum(p * math.log(p) for p in belief.values() if p > 0.0)
+    # base 2, matching the authors' `entropy` (np.log2). Information gain only
+    # ever feeds an argmax and a > 0 test, so the base does not change which
+    # variable is selected -- but it makes reported IG values comparable to theirs.
+    return -sum(p * math.log2(p) for p in belief.values() if p > 0.0)
 
 
 def condition(belief: Belief, variable: DecisionVariable, value: bool) -> Belief:

@@ -30,7 +30,17 @@ from pleasqlarify.eval.metrics import gold_label_entropy
 from pleasqlarify.eval.oracle import GoldOracle, assign_gold_intents, assign_gold_intents_exec
 from pleasqlarify.llm.client import CachedLLMClient
 from pleasqlarify.pipeline.generate import build_prompt
+from pleasqlarify.candidate_space import CandidateSession
 from pleasqlarify.session import build_session
+
+# A10: the authors' conditions as (include_atomic, group_split) over candidates.
+CANDIDATE_MODES = {
+    "Baseline EIG + Atomic Features": (True, None),
+    "Baseline Random + Atomic Features": (True, None),
+    "Baseline Max-Prob-First + Atomic Features": (True, None),
+    "Clustering + EIG + Atomic Features": (True, "cluster"),
+    "Clustering + EIG + Feature Grouping": (True, "mask"),
+}
 
 
 def main() -> None:
@@ -94,11 +104,20 @@ def main() -> None:
 
         for cond in conditions:
             for gi, gold_sql in enumerate(gold_sqls):
-                sess = build_session(
-                    s.utterance, s.schema, s.db_path, client, embedder=embedder,
-                    n=len(s.generated_sql), mode=cond.mode, clustering=cond.clustering,
-                    sim=base.sim, **{k: v for k, v in kwargs.items() if k != "serialization"},
-                )
+                if cfg.variable_space == "candidate":
+                    inc, split = CANDIDATE_MODES[cond.name]
+                    sess = CandidateSession(
+                        candidates=base.candidates, sim=base.sim, vocab=base.vocab,
+                        include_atomic=inc, group_split=split,
+                        clustering=cond.clustering, linkage=cfg.linkage,
+                    )
+                else:
+                    sess = build_session(
+                        s.utterance, s.schema, s.db_path, client, embedder=embedder,
+                        n=len(s.generated_sql), mode=cond.mode, clustering=cond.clustering,
+                        sim=base.sim,
+                        **{k: v for k, v in kwargs.items() if k != "serialization"},
+                    )
                 oracle = GoldOracle(gold_sql, s.schema, sess.vocab)
                 ent = []
                 for _t in range(args.max_turns + 1):

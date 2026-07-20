@@ -31,6 +31,8 @@ class PipelineConfig:
     where_granularity: str = "clause"
     # A8 — how multi-atom feature groups are formed
     group_mode: str = "mined"
+    # A10 — what a decision variable partitions: "cluster" or "candidate"
+    variable_space: str = "candidate"
     # A12 — when the repair loop stops
     termination: str = "similarity_one"
     # A14 — how candidates are labelled with a gold interpretation
@@ -65,6 +67,7 @@ OURS_ORIGINAL = PipelineConfig(
     threshold=0.1,
     where_granularity="predicate",
     group_mode="grouped",
+    variable_space="cluster",
     termination="cluster_or_uninformative",
     gold_assignment="embedding",
     entropy_units="bits",   # our nats-era numbers are superseded either way

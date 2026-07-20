@@ -14,13 +14,13 @@ def _dv(contains):
 
 def test_entropy_uniform_two():
     b = {0: 0.5, 1: 0.5}
-    assert math.isclose(entropy(b), math.log(2))
+    assert math.isclose(entropy(b), 1.0)  # bits (A15): uniform over 2 = 1 bit
 
 
 def test_perfect_split_ig_equals_prior_entropy():
     b = {0: 0.5, 1: 0.5}
     dv = _dv({0})  # splits the two clusters perfectly
-    assert math.isclose(information_gain(b, dv), math.log(2))
+    assert math.isclose(information_gain(b, dv), 1.0)  # bits: a perfect split gains 1 bit
 
 
 def test_constant_variable_zero_ig():
