@@ -159,3 +159,58 @@ variables**.
 > `unclear` classes and the highest encoded label dropped) on 64 examples; ours use
 > execution-match labels on the 59 samples our filter keeps. Only the *ordering
 > within* each table is being compared.
+
+
+## A10 aligned — candidate-level decision variables
+
+The final architectural gap. With decision variables splitting **candidates**
+(their `cand_indices_by_val` + candidate-frequency belief) instead of partitioning
+clusters:
+
+| Condition | reach-0 | t1 | t2 | t3 | t5 |
+|---|---|---|---|---|---|
+| **Clustering + EIG + Atomic Features** | **0.994** | **0.842** | **0.564** | 0.228 | 0.037 |
+| Clustering + EIG + Feature Grouping | 0.981 | 0.904 | 0.610 | **0.201** | **0.035** |
+| Baseline EIG + Atomic Features | 0.981 | 0.887 | 0.597 | 0.207 | 0.035 |
+| Baseline Random + Atomic Features | 0.752 | 1.089 | 0.960 | 0.816 | 0.619 |
+| Baseline Max-Prob-First + Atomic Features | 0.068 | 1.181 | 1.184 | 1.185 | 1.188 |
+
+Compare against the cluster-partition architecture (previous section): clustering
+went 0.901 → **0.994**, Feature Grouping 0.901 → 0.981, and Feature Grouping is no
+longer identical to the Atomic clustering condition — it is a distinct condition
+with its own curve, which is exactly what A10 was blocking.
+
+### What changed
+
+**The clustering advantage now appears.** `Clustering + EIG + Atomic` (0.994) beats
+`Baseline EIG + Atomic` (0.981) and leads on entropy at turns 1–2. That is the
+direction the paper claims, and it only emerges once decision variables are
+candidate-level. Our earlier "clustering hurts" result was an artefact of the
+cluster-partition architecture, not a property of AMBROSIA.
+
+### What still does not match
+
+**The two clustering variants are ordered opposite to their logs.** Their recorded
+run has `CLUSTER_GROUP` best (0.855) and `CLUSTER_CHARACTERISTIC` worst (0.649); we
+get `CLUSTER_CHARACTERISTIC` best (0.994) and `CLUSTER_GROUP` (0.981) level with the
+baseline.
+
+**The metric is near its ceiling here.** Three conditions sit at 0.98–0.99, so
+reach-zero can barely separate them and the remaining differences are small
+(≈0.01–0.06 bits per turn). Their run separates far more (0.65–0.86), which is
+further evidence the two populations and label schemes are not comparable in
+absolute terms. Conclusions should rest on the entropy curves, not on reach-zero.
+
+### Net
+
+- The paper's **headline direction reproduces**: functional clustering + EIG beats
+  EIG alone, once the architecture is right.
+- The paper's **specific claim about feature grouping does not**: we find grouping
+  no better than the plain baseline, where their logs make it their best condition.
+- The **greedy baseline is catastrophic** in both their data and ours.
+
+The one substantive mechanism still unreproduced is therefore *feature grouping*,
+not clustering. Remaining differences to chase: our mined-group→variable mapping
+(`min_bin_frac`, dedup key, `top_per_cluster`), the missing `SIM_IG_UNIFORM`
+strategy, and the label scheme (theirs adds `other`/`unclear` classes and drops the
+highest encoded label).
