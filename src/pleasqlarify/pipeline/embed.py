@@ -116,13 +116,83 @@ class MiniLMEmbedder:  # pragma: no cover - optional heavy dependency
         )
 
 
+def serialize_rows(rt: ResultTable | None) -> list[str]:
+    """One string per result row, cells space-joined — the authors' ``mode="row"``.
+
+    Their ``compute_similarity_matrix_after_optimal_alignment`` embeds *rows*, not
+    the whole table (``" ".join(map(str, row))``), then pads the shorter table with
+    a literal ``<NULL>`` token before aligning.
+    """
+    if rt is None or rt.is_error or rt.is_empty:
+        return []
+    return [" ".join("" if v is None else str(v) for v in row) for row in rt.rows]
+
+
+PAD_TOKEN = "<NULL>"
+
+
+def aligned_similarity(
+    rows_a: list[str], rows_b: list[str], embedder: Embedder
+) -> float:
+    """Functional similarity of two outputs by **optimal row alignment** (A4).
+
+    Reproduces the authors' live path: embed each row, pad the shorter table to
+    equal length with ``<NULL>``, solve the assignment problem on ``1 - cosine``,
+    and return the mean cosine of the matched pairs. Two empty outputs are
+    similarity 1 (their ``empty vs empty -> 1`` case).
+
+    This differs from embedding a single serialized table: it is invariant to row
+    order and compares like row with like, rather than letting a shared header or
+    row count dominate.
+    """
+    if not rows_a and not rows_b:
+        return 1.0
+    if not rows_a or not rows_b:
+        return 0.0
+    n = max(len(rows_a), len(rows_b))
+    a = rows_a + [PAD_TOKEN] * (n - len(rows_a))
+    b = rows_b + [PAD_TOKEN] * (n - len(rows_b))
+    va, vb = embedder.embed(a), embedder.embed(b)
+    sim = va @ vb.T
+    np.clip(sim, -1.0, 1.0, out=sim)
+    try:
+        from scipy.optimize import linear_sum_assignment
+
+        ri, ci = linear_sum_assignment(1.0 - sim)
+    except ImportError:  # pragma: no cover - scipy is a core dep of the real stack
+        ri = ci = np.arange(n)
+    return float(np.mean(sim[ri, ci]))
+
+
+def aligned_similarity_matrix(
+    candidates: list[Candidate], embedder: Embedder | None = None
+) -> np.ndarray:
+    """S built with the authors' row-alignment metric (A4)."""
+    embedder = embedder or DeterministicEmbedder()
+    rows = [serialize_rows(c.result) for c in candidates]
+    n = len(rows)
+    sim = np.eye(n)
+    for i in range(n):
+        for j in range(i + 1, n):
+            sim[i, j] = sim[j, i] = aligned_similarity(rows[i], rows[j], embedder)
+    np.clip(sim, 0.0, 1.0, out=sim)
+    np.fill_diagonal(sim, 1.0)
+    return sim
+
+
 def similarity_matrix(
     candidates: list[Candidate],
     embedder: Embedder | None = None,
     style: SerializationStyle = "header_rows",
 ) -> np.ndarray:
-    """Build the symmetric functional-similarity matrix S = cosine(outputs)."""
+    """Build the symmetric functional-similarity matrix S = cosine(outputs).
+
+    ``style="row_aligned"`` selects the authors' optimal-row-alignment metric; the
+    other styles embed one serialized table and are the A4 sweep alternatives.
+    """
     embedder = embedder or DeterministicEmbedder()
+    if style == "row_aligned":
+        return aligned_similarity_matrix(candidates, embedder)
     texts = [
         serialize_result(c.result or ResultTable(error="unrun"), style=style)
         for c in candidates
@@ -139,6 +209,9 @@ def similarity_matrix(
 
 __all__ = [
     "serialize_result",
+    "serialize_rows",
+    "aligned_similarity",
+    "aligned_similarity_matrix",
     "SERIALIZATION_STYLES",
     "SerializationStyle",
     "Embedder",
