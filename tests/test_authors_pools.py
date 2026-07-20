@@ -147,3 +147,38 @@ def test_materialize_db_is_idempotent(tmp_path):
     a = materialize_db(DUMP, str(tmp_path), "k")
     b = materialize_db(DUMP, str(tmp_path), "k")
     assert a == b
+
+
+# ------------------------------------------------- malformed dumps (10/300)
+
+MALFORMED = (
+    "CREATE TABLE Applicants (\n"
+    "    id INTEGER PRIMARY KEY,\n"
+    "    email TEXT,\n"
+    ");\n"
+    "INSERT INTO Applicants (id,email) VALUES (1,'a@b.c');"
+)
+
+
+def test_trailing_comma_in_create_table_is_repaired(tmp_path):
+    """10 of the authors' 300 dumps have `col TYPE,\n)` which SQLite rejects."""
+    from pleasqlarify.data.execution import run_query
+
+    path = materialize_db(MALFORMED, str(tmp_path), "m")
+    rt = run_query(path, "SELECT email FROM Applicants")
+    assert not rt.is_error, rt.error
+    assert rt.rows == [("a@b.c",)]
+
+
+def test_repair_never_rewrites_insert_payloads(tmp_path):
+    """A string literal containing ',)' must survive the repair untouched."""
+    from pleasqlarify.data.authors_pools import repair_dump
+    from pleasqlarify.data.execution import run_query
+
+    dump = (
+        "CREATE TABLE T (v TEXT);\n"
+        "INSERT INTO T (v) VALUES ('weird,)value');"
+    )
+    assert "weird,)value" in repair_dump(dump)
+    path = materialize_db(dump, str(tmp_path), "lit")
+    assert run_query(path, "SELECT v FROM T").rows == [("weird,)value",)]
