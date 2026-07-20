@@ -95,7 +95,10 @@ strategy.
    canonicalize with sqlglot. We keep 59 where they kept 64, so the populations are
    close but not identical.
 
-Given (1) especially, the correct statement is: **the clustering advantage does not
-reproduce under the authors' configuration as far as we have aligned it**, with the
-feature-grouping mechanism still outstanding. That is a stronger claim than before
-— implementation drift is now largely eliminated — but it is not final.
+The correct statement is therefore: **the clustering advantage does not reproduce
+under the authors' configuration as far as we have aligned it**, and one of their
+two "ours" conditions (Feature Grouping) *cannot* be reproduced at all without
+moving decision variables from cluster partitions to candidate masks. Implementation
+drift is now largely eliminated, which makes this stronger than any earlier claim —
+but the A10 change and the comparison against their logged curves are both
+outstanding, so it is not final.
