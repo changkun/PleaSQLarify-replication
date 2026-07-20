@@ -85,10 +85,8 @@ strategy.
    (A cluster-value majority rule was added for mined groups, **A8e**, a documented
    interpolation since their variables are candidate-level and our belief is
    cluster-level.)
-2. **Their logged curves have not been extracted.** Their 4.6 GB
-   `full_logs_08111341.jsonl` contains the per-turn entropies behind Figure 5.
-   Comparing our curves against *their own recorded numbers* — rather than against
-   the figure — is the decisive check and has not been done.
+2. ✅ **Their logged curves are now extracted** — see the section below. They
+   change the conclusion.
 3. **`SIM_IG_UNIFORM` is not implemented.** They ran it in all three modes and did
    not report it; we do not have it.
 4. **Sample filter is approximate.** Their filter compares Spider-parsed forms; we
@@ -102,3 +100,62 @@ moving decision variables from cluster partitions to candidate masks. Implementa
 drift is now largely eliminated, which makes this stronger than any earlier claim —
 but the A10 change and the comparison against their logged curves are both
 outstanding, so it is not final.
+
+
+## Their own logged results (from `full_logs_08111341.jsonl`)
+
+Extracted from the 4.6 GB log the paper's Figure 5 was plotted from: mean of the
+two branches' `label_entropy` per turn, exactly as their notebook does.
+
+| mode \| strategy | n | reach-0 | t0 | t1 | t2 | t3 | t5 |
+|---|---|---|---|---|---|---|---|
+| **CLUSTER_GROUP \| EIG** | 117 | **0.855** | 0.427 | 0.356 | 0.297 | 0.250 | 0.153 |
+| ATOMIC \| EIG | 131 | 0.740 | 0.439 | 0.475 | 0.344 | 0.281 | 0.207 |
+| CLUSTER_CHARACTERISTIC \| EIG | 131 | **0.649** | 0.435 | 0.411 | 0.388 | 0.346 | 0.318 |
+| CLUSTER_GROUP \| RANDOM | 120 | 0.792 | 0.443 | 0.395 | 0.350 | 0.308 | 0.224 |
+| CLUSTER_GROUP \| SIM_IG_UNIFORM | 120 | **0.883** | 0.428 | 0.373 | 0.305 | 0.213 | 0.099 |
+| ATOMIC \| MAX_PROB_FIRST | 134 | 0.194 | 0.409 | 0.422 | 0.381 | 0.362 | 0.402 |
+
+### What this settles
+
+**1. The paper's advantage is real in their data — but it comes from *feature
+grouping*, not from functional clustering.** Among their EIG conditions,
+`CLUSTER_GROUP` wins (0.855) — yet `CLUSTER_CHARACTERISTIC`, which is clustering
+**without** grouping, is the **worst of the three** (0.649), losing to plain
+`ATOMIC` (0.740).
+
+**2. Our result agrees with theirs exactly where we can compare it.** We found
+Clustering + EIG + Atomic *underperforms* EIG + Atomic (0.901 vs 0.975). Their own
+log shows the same ordering (0.649 vs 0.740). Our "clustering hurts" finding is
+**not** a replication failure — it reproduces their data.
+
+**3. The one condition we disagree on is the one we cannot compute.** Their win is
+`CLUSTER_GROUP`, and our Feature Grouping condition is structurally inert
+(gap 1 above): mined groups collapse onto single atoms under cluster-partition
+decision variables. So the disagreement is entirely explained by the A10 difference
+— candidate-mask vs cluster-partition variables — and is not evidence against the
+paper.
+
+**4. The unreported condition is their best.** `SIM_IG_UNIFORM | CLUSTER_GROUP`
+reaches 0.883, beating every condition the paper reports. It appears nowhere in the
+paper.
+
+### Revised status
+
+The earlier headline — "the clustering advantage does not reproduce" — is
+**withdrawn as stated**. The accurate statement is:
+
+> Functional clustering *alone* does not help; their own logs show it hurting
+> (0.649 vs 0.740), which we independently reproduce. The paper's gain comes from
+> **lift-mined multi-atom feature groups used as candidate-level decision
+> variables**. We have implemented the mining but not the candidate-level variable
+> (A10), so we cannot yet confirm or refute that specific mechanism.
+
+Reproducing the paper now has one concrete blocker: **A10 — candidate-mask decision
+variables**.
+
+> Caveat: absolute values are not comparable across the two tables. Their entropies
+> are computed over their own label scheme (`classify_behavior`, with `other` /
+> `unclear` classes and the highest encoded label dropped) on 64 examples; ours use
+> execution-match labels on the 59 samples our filter keeps. Only the *ordering
+> within* each table is being compared.
