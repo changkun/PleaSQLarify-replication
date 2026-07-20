@@ -1,10 +1,17 @@
 # NOTICE — experiment artifacts and third-party data
 
-The runs under `experiments/` are versioned in this repository by the project
+> **Superseded:** runs under `experiments/` are **no longer versioned**. They are
+> gitignored and reproduced locally — see [`README.md`](README.md). The warning
+> below is retained because the run artifacts still exist in this repository's git
+> **history** (they were tracked between commits `1274f61` and the removal commit).
+>
+> ---
+
+The runs under `experiments/` were versioned in this repository by the project
 owner's explicit choice, to preserve full experimental provenance (every LLM
 request/response body and every intermediate result).
 
-## Third-party data warning (read before making this repo public)
+## Third-party data warning
 
 These artifacts **embed AMBROSIA-derived content**:
 

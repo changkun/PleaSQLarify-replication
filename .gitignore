@@ -11,7 +11,9 @@ data/generations/
 data/sessions/
 data/ambrosia/
 *.sqlite
-# NOTE: experiment runs under experiments/ ARE versioned by project-owner choice
-# (full LLM request/response bodies + all intermediates). They contain
-# AMBROSIA-derived content — see experiments/NOTICE.md before making this repo
-# public. To keep runs local instead, add `experiments/` here.
+# Experiment runs are NOT versioned: their artifacts embed AMBROSIA-derived
+# content (questions, gold queries, executed outputs), and AMBROSIA's authors ask
+# that it not be redistributed. Regenerate them locally — see experiments/README.md.
+experiments/*
+!experiments/README.md
+!experiments/NOTICE.md

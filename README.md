@@ -60,11 +60,12 @@ uv run python scripts/run_experiment.py --model gpt-4o --per-type 5 --n 50
 uv run python scripts/run_experiment.py --offline --per-type 1 --n 8   # no network
 ```
 
-Layout, captured-body examples, and scaling guidance:
-[`docs/04-experiments.md`](docs/04-experiments.md). Runs under `experiments/` are
-versioned with full provenance; the bodies embed AMBROSIA-derived content, so
-**read [`experiments/NOTICE.md`](experiments/NOTICE.md) before making this repo
-public.** No credentials are ever stored in artifacts (env-only).
+Layout and scaling guidance: [`docs/04-experiments.md`](docs/04-experiments.md).
+Runs under `experiments/` are **not versioned** — their artifacts embed
+AMBROSIA-derived content, which its authors ask not be redistributed. They are
+fully reproducible from the committed code;
+[`experiments/README.md`](experiments/README.md) has the prerequisites and exact
+commands. No credentials are ever stored in artifacts (env-only).
 
 ## Pipeline (Section 5–6)
 

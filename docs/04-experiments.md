@@ -94,5 +94,5 @@ By project-owner choice, `experiments/` **is versioned** (full provenance,
 including raw request/response bodies) — see [`experiments/NOTICE.md`](../experiments/NOTICE.md).
 Caveat: these bodies embed AMBROSIA-derived content, and AMBROSIA is not
 redistributable (see `03-findings-and-decisions.md` §A2), so **review the NOTICE
-before making this repository public**. No API keys/credentials are ever stored in
+**. Runs are gitignored and reproduced locally; see [`experiments/README.md`](../experiments/README.md). No API keys/credentials are ever stored in
 the artifacts (env-only). The raw dataset (`data/ambrosia/`) stays gitignored.
