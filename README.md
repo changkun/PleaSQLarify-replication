@@ -107,13 +107,19 @@ Two layers, deliberately separated:
   **verified mechanism** explains it: on AMBROSIA's tiny, structurally-similar
   tables MiniLM **over-merges genuinely-distinct outputs** (cosine ≥ 0.9), so
   functional clustering terminates on a cluster spanning gold intents (A4/A5/A12).
-  Robust independent finding: GPT-4o mostly collapses ambiguity (only 33% of
-  questions surfaced ≥ 2 interpretations; scope hardest at 22%). Honest write-up:
+  Robust independent finding: GPT-4o mostly collapses ambiguity. **Both claims are
+  now suspended** — the authors' supplementary code became available and shows our
+  implementation differed from theirs in six load-bearing ways (two were our bugs),
+  and that their evaluation is conditioned on pools already spanning every gold
+  interpretation. See
+  [`specs/evaluation/17-authors-supplement.md`](specs/evaluation/17-authors-supplement.md).
+  Write-up:
   [`docs/02-execution-results.md`](docs/02-execution-results.md),
   [`docs/03-findings-and-decisions.md`](docs/03-findings-and-decisions.md).
 
-**Scope caveat:** small scale (15 questions, one seed), wide CIs — inconclusive,
-neither reproduction nor refutation. AMBROSIA databases are tiny by design, which
+**Scope caveat:** the authors' own Figure 5 rests on 64 questions / ~134 runs per
+condition, so our 150-question run is not under-powered; alignment, not scale, was
+the gap. AMBROSIA databases are tiny by design, which
 is the crux of the clustering difficulty. Reproducing the paper's magnitudes is
 future work (finer clustering / lower A5 threshold, A4 serialization, larger
 databases) — enabled, not done, by this scaffold.

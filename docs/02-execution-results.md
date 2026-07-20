@@ -1,5 +1,13 @@
 # Execution Results
 
+> ⚠️ **Numbers below are superseded.** They were produced before the authors'
+> supplementary code was available, under assumptions now known to differ from
+> theirs in six load-bearing ways (two of them our bugs), and without their
+> sample-selection filter. Entropies are also in **nats** here; the authors use
+> **bits**. Kept for provenance; see
+> [`specs/evaluation/17-authors-supplement.md`](../specs/evaluation/17-authors-supplement.md).
+
+
 Real-backend runs: **GPT-4o generation + `all-MiniLM-L6-v2` embeddings + UMAP** on
 the **real AMBROSIA** benchmark. The primary result below is a **150-sample run**
 (`experiments/gpt4o_per50_n50/`, 7,500 GPT-4o calls, 1.6M tokens); reproduce with

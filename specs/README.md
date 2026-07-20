@@ -65,6 +65,13 @@ Decided with the project owner:
 | [`interface/`](interface) | The Section 8 visual interface, one view per spec, plus its backend. |
 | [`study/`](study) | The Section 9 user-study protocol and materials. |
 
+> **Precedence update (spec 17).** The authors' supplementary code is now
+> available and is ground truth for decisions the paper leaves unstated — it is
+> what their reported numbers were produced by. Order: **paper → authors' code →
+> our documented gap-fills**. Rows marked ✅ in the register below are settled from
+> their code; several of our earlier defaults were wrong and have been corrected.
+> See [`evaluation/17-authors-supplement.md`](evaluation/17-authors-supplement.md).
+
 ## Sequential spec list
 
 Execute top-to-bottom. **Implementation status (2026-07-01):** specs 01–14 are
@@ -89,6 +96,8 @@ later against the built system. See the top-level [`README.md`](../README.md).
 | 13 | [interface/13-decision-space.md](interface/13-decision-space.md) | Ranked decision-variable panel, example query, yes/no + arrow navigation. | drafted |
 | 14 | [interface/14-predicted-query-and-output.md](interface/14-predicted-query-and-output.md) | Predicted-query atomic-feature list with probabilities + live predicted output. | drafted |
 | 15 | [study/15-user-study-protocol.md](study/15-user-study-protocol.md) | Reproducible user-study protocol: 12 participants, 5 tasks, SUS + component questionnaires. | drafted |
+| 16 | [evaluation/16-assumption-sweep.md](evaluation/16-assumption-sweep.md) | Pre-registered sweep of the A4/A5/A12 assumptions: fixed yardstick, dev/held-out split, degeneracy guard. | pre-registered |
+| 17 | [evaluation/17-authors-supplement.md](evaluation/17-authors-supplement.md) | **The authors' supplementary code as ground truth**: settles A3–A6, A12, A14–A16; records what it does not settle. | authoritative |
 
 ## Dependency graph
 
@@ -126,24 +135,29 @@ Each row is an undocumented decision the paper leaves open. The owning spec
 carries the full reasoning (recommended default + alternatives). This table is
 the index; treat the per-spec sections as authoritative.
 
-| ID | Decision the paper leaves open | Owning spec | Our recommended default |
+**Status legend.** ✅ **resolved** = settled from the authors' supplementary code
+(see [`specs/evaluation/17-authors-supplement.md`](evaluation/17-authors-supplement.md));
+the "default" column then records *their* decision, not our guess. ⬜ = still an
+open gap-fill of ours.
+
+| ID | Decision the paper leaves open | Owning spec | Decision (✅ = the authors' actual code) |
 |---|---|---|---|
-| A1 | Which LLM generates candidates; exact prompt, schema context, few-shot | 03 | GPT-4o (paper cites [30] for the eval), zero-shot with full schema DDL in prompt |
+| A1 | Which LLM generates candidates; exact prompt, schema context, few-shot | 03 | ⬜ **Still open — generation code is absent from the supplement.** Their precomputed pools (~95/question) are usable directly |
 | A2 | How invalid candidates are detected (parse vs execute); dedup policy | 03 | Drop on Spider-parse failure; keep functional duplicates (they inform priors) |
-| A3 | How a result table is serialized to text before embedding | 04 | Deterministic header + row-major CSV-like flattening, capped length |
-| A4 | Embedding similarity metric; empty/error-result handling | 04 | Cosine similarity; error/empty rows map to a sentinel class |
-| A5 | Hierarchical-clustering linkage + how #clusters is chosen | 04 | Average linkage on `1 − S`; #clusters via distance threshold (see spec) |
-| A6 | Exact atomic-feature vocabulary and value granularity (literals, `=` vs `LIKE`) | 05 | Clause-element atoms incl. predicate operator + normalized literal (see spec) |
+| A3 | How a result table is serialized to text before embedding | 04 | ✅ **Per-ROW strings** (`" ".join(cells)`), shorter table padded with `<NULL>` — not one whole-table string |
+| A4 | Embedding similarity metric; empty/error-result handling | 04 | ✅ **Optimal row alignment**: embed rows, Hungarian-match on `1−cos`, mean of matched pairs; empty-vs-empty = 1 |
+| A5 | Hierarchical-clustering linkage + how #clusters is chosen | 04 | ✅ Average linkage; **k = max(2, min(4, round(n/10) or 2))** on survivors, recomputed each turn. Their silhouette selector is dead code |
+| A6 | Exact atomic-feature vocabulary and value granularity (literals, `=` vs `LIKE`) | 05 | ✅ The **entire WHERE clause is ONE atom** (boolean structure preserved); set-ops recurse into both branches with depth in the atom |
 | A7 | Column/table alias canonicalization for atoms | 05 | Resolve aliases to base table.column before encoding |
 | A8 | Feature-grouping algorithm; lift threshold; co-occurrence threshold | 06 | Group by cluster; lift > 1 for characteristic; co-occ ≥ 0.95 for implicit |
 | A9 | Belief `p_t(m)` initialization (uniform vs LLM priors) | 07 | Uniform over surviving functional classes; alternative: sampling frequency |
 | A10 | Intent set `M` vs action set `A` mapping | 07 | One intent per functional cluster; actions in a cluster are equivalent |
 | A11 | Decision-variable value set (binary vs multi-valued) | 07 | Binary contains/excludes, per Figure 4/8 |
-| A12 | Loop termination (single action vs single functional class) | 08 | Terminate on single surviving functional class |
+| A12 | Loop termination (single action vs single functional class) | 08 | ✅ **Mean pairwise similarity of survivors ≥ 1** (`stop_mode="sim1"`, tol 1e-9) — stricter than a single cluster |
 | A13 | Simulated-user oracle answering policy in the eval | 10 | Answer yes/no by whether the gold query carries the decision variable |
-| A14 | Gold-intent assignment rule for generated candidates | 10 | Assign to the gold query with max functional output similarity |
-| A15 | "Gold-label entropy" and "output similarity" metric definitions | 10 | Shannon entropy of gold-label distribution over survivors (see spec) |
-| A16 | Fig 5 legend "ERG" vs text "EIG-without-clustering" naming mismatch | 10 | Treat as the same baseline; flagged as resolve-me |
+| A14 | Gold-intent assignment rule for generated candidates | 10 | ✅ **Exact execution-output equality**, then per-ambiguity-type AST heuristics; **not** embedding similarity |
+| A15 | "Gold-label entropy" and "output similarity" metric definitions | 10 | ✅ Shannon entropy in **bits** (`np.log2`), un-normalized |
+| A16 | Fig 5 legend "ERG" vs text "EIG-without-clustering" naming mismatch | 10 | ✅ **Resolved: "ERG" is not in their code.** Fig 5's baseline is `ATOMIC`+`EIG`, labelled "Baseline EIG + Atomic Features" |
 | A17 | UMAP hyperparameters; distance input (precomputed vs feature) | 12 | `metric='precomputed'` on `1 − S`; defaults otherwise (see spec) |
 | A18 | Frontend/backend tech stack (paper only shows a hosted tool) | 11 | Python (FastAPI) backend + web frontend; see spec for rationale |
 

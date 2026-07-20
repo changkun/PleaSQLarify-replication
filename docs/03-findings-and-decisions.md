@@ -1,5 +1,22 @@
 # Findings & Decisions
 
+> ## ⚠️ Headline suspended (authors' code obtained)
+>
+> The conclusion below — *"the paper's clustering advantage does not reproduce"* —
+> is **suspended, not retracted and not confirmed.** The authors' supplementary
+> code shows our implementation differed from theirs in at least six load-bearing
+> ways (A3/A4 similarity, A5 `k`, A6 WHERE atomicity, A12 termination, A14 gold
+> assignment, A15 entropy units), **including the exact assumptions that comparison
+> was sensitive to**. Two were outright bugs on our side: only the first UNION
+> branch was visited, and `FROM` atoms were never produced at all.
+>
+> Their evaluation is also **conditioned on samples whose candidate pool already
+> contains every gold interpretation** (`run_eval.py:1522`), which we did not do.
+> Until we re-run under their configuration and their filter, our comparison
+> measured a different system on a different population. See
+> [`specs/evaluation/17-authors-supplement.md`](../specs/evaluation/17-authors-supplement.md).
+
+
 Consolidated record of what we discovered while replicating *PleaSQLarify* and
 every non-trivial decision we made where the paper was silent. The authoritative,
 per-step reasoning lives in each spec's *Core Assumptions & Undocumented
