@@ -118,10 +118,20 @@ spec-16 sweep can still vary them:
 | A15 | bits | **switched** |
 | A16 | condition names | **switched** |
 
-## 7. Open work
+## 7. Status and open work
 
-1. An "authors' configuration" preset that turns all of these on at once.
-2. Re-run on **their 300 pools** with **their sample filter** — zero API cost.
-3. Only then run the spec-16 sweep, as sensitivity analysis around a known-correct
-   centre rather than around our guesses.
-4. Retract or confirm the suspended headline (see `docs/03-findings-and-decisions.md`).
+1. ✅ "Authors' configuration" preset (`authors_config.AUTHORS`).
+2. ✅ Re-run on their pools with their sample filter — see
+   [`docs/05-authors-pools-rerun.md`](../../docs/05-authors-pools-rerun.md).
+   59 samples kept (they kept 64), 805 runs. Every condition improved under their
+   configuration, but **EIG-on-atomic still beats both clustering conditions**
+   (reach-zero 0.975 vs 0.901).
+3. ⬜ **A8 (feature grouping) is not yet aligned** — their `CLUSTER_GROUP` mines
+   itemsets with mlxtend apriori (`min_support=0.10`, `min_lift=1.3`, `top_k=12`,
+   `gamma_size_penalty=0.25`, `top_per_cluster=1`, `min_len=2`); we use cluster
+   common-atom signatures. This is the mechanism the clustering conditions depend
+   on and the most likely remaining explanation for the gap.
+4. ⬜ **Extract their logged per-turn curves** from `full_logs_08111341.jsonl` and
+   compare against ours — the decisive check, not yet done.
+5. ⬜ `SIM_IG_UNIFORM` is unimplemented (they ran it, did not report it).
+6. ⬜ Then the spec-16 sweep, as sensitivity analysis around a known-correct centre.
