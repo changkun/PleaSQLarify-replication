@@ -1,26 +1,16 @@
 # Findings & Decisions
 
-> ## ⚠️ Headline suspended (authors' code obtained)
+> ## Resolved: the claim reproduces; three of our headlines did not
 >
-> The conclusion below — *"the paper's clustering advantage does not reproduce"* —
-> is **suspended, not retracted and not confirmed.** The authors' supplementary
-> code shows our implementation differed from theirs in at least six load-bearing
-> ways (A3/A4 similarity, A5 `k`, A6 WHERE atomicity, A12 termination, A14 gold
-> assignment, A15 entropy units), **including the exact assumptions that comparison
-> was sensitive to**. Two were outright bugs on our side: only the first UNION
-> branch was visited, and `FROM` atoms were never produced at all.
+> The conclusion recorded in section D below — *"the paper's clustering advantage
+> does not reproduce"* — is **retracted**. On the authors' own pools, with their
+> configuration, clustering + EIG beats EIG alone (0.994 vs 0.981). See
+> [`05-authors-pools-rerun.md`](05-authors-pools-rerun.md).
 >
-> Their evaluation is also **conditioned on samples whose candidate pool already
-> contains every gold interpretation** (`run_eval.py:1522`), which we did not do.
-> Until we re-run under their configuration and their filter, our comparison
-> measured a different system on a different population. See
-> [`specs/evaluation/17-authors-supplement.md`](../specs/evaluation/17-authors-supplement.md).
-
-
-Consolidated record of what we discovered while replicating *PleaSQLarify* and
-every non-trivial decision we made where the paper was silent. The authoritative,
-per-step reasoning lives in each spec's *Core Assumptions & Undocumented
-Decisions* section; this is the executive summary.
+> The cause was **A10**: the authors' decision variables split *candidates*, not
+> clusters. Under cluster partitions a mined feature group and a single atom induce
+> the same partition, so feature grouping was provably inert and clustering was
+> handicapped. Section D is retained as the record of what we believed and why.
 
 ## A. Meta-findings (about the paper's reproducibility)
 

@@ -1,11 +1,17 @@
 # Execution Results
 
-> ⚠️ **Numbers below are superseded.** They were produced before the authors'
-> supplementary code was available, under assumptions now known to differ from
-> theirs in six load-bearing ways (two of them our bugs), and without their
-> sample-selection filter. Entropies are also in **nats** here; the authors use
-> **bits**. Kept for provenance; see
-> [`specs/evaluation/17-authors-supplement.md`](../specs/evaluation/17-authors-supplement.md).
+> ⚠️ **Superseded — kept as provenance, not as results.**
+>
+> These numbers come from our own 150-question GPT-4o run, produced *before* the
+> authors' supplementary code was available. That implementation differed from
+> theirs in eight load-bearing ways (two were bugs of ours), used a different
+> entropy base, and did not apply their sample filter. Its headline — "the paper's
+> clustering advantage does not reproduce" — was **later shown to be an artefact of
+> our decision-variable architecture** and is retracted.
+>
+> **For the actual replication result see
+> [`05-authors-pools-rerun.md`](05-authors-pools-rerun.md).**
+> What the deviations were: [`../specs/evaluation/17-authors-supplement.md`](../specs/evaluation/17-authors-supplement.md).
 
 
 Real-backend runs: **GPT-4o generation + `all-MiniLM-L6-v2` embeddings + UMAP** on

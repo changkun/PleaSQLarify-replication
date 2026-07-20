@@ -89,41 +89,51 @@ while not s.terminated:
 print(s.final_query().sql)
 ```
 
-## Validation status
+## Replication result
 
-Two layers, deliberately separated:
+**The paper's central claim reproduces.** On the authors' own candidate pools, with
+their sample filter and their configuration, functional clustering + expected
+information gain resolves more ambiguity than EIG alone (reach-zero **0.994** vs
+**0.981**, and lower entropy at every early turn). The greedy Max-Prob-First
+baseline is catastrophic (0.068), as the paper argues.
 
-- **Internal consistency** — the offline test suite (52 tests) proves the
-  implementation behaves as the specs describe, deterministically and with no
-  network.
-- **Real-backend, real-data validation** — the paper's actual backends were run:
-  GPT-4o generation (via a configurable OpenAI-compatible endpoint),
-  `all-MiniLM-L6-v2` embeddings, and UMAP, on the **real AMBROSIA** benchmark
-  (`load_ambrosia` wired; dataset downloaded locally and gitignored, as it is not
-  redistributable). The full pipeline runs end to end at **150-sample scale**
-  (7,500 GPT-4o calls, 1.6M tokens, full provenance captured). **The paper's
-  clustering advantage does not reproduce:** across 114 genuinely-ambiguous runs
-  the clustering conditions are consistently slightly behind the atomic-feature
-  baselines (resolve 71% of runs vs 86–89%); EIG-on-atomic is strongest. A
-  **verified mechanism** explains it: on AMBROSIA's tiny, structurally-similar
-  tables MiniLM **over-merges genuinely-distinct outputs** (cosine ≥ 0.9), so
-  functional clustering terminates on a cluster spanning gold intents (A4/A5/A12).
-  Robust independent finding: GPT-4o mostly collapses ambiguity. **Both claims are
-  now suspended** — the authors' supplementary code became available and shows our
-  implementation differed from theirs in six load-bearing ways (two were our bugs),
-  and that their evaluation is conditioned on pools already spanning every gold
-  interpretation. See
-  [`specs/evaluation/17-authors-supplement.md`](specs/evaluation/17-authors-supplement.md).
-  Write-up:
-  [`docs/02-execution-results.md`](docs/02-execution-results.md),
-  [`docs/03-findings-and-decisions.md`](docs/03-findings-and-decisions.md).
+**One component does not reproduce:** *feature grouping*. Their own logs make
+`CLUSTER_GROUP` their strongest condition; we find it level with the plain baseline.
 
-**Scope caveat:** the authors' own Figure 5 rests on 64 questions / ~134 runs per
-condition, so our 150-question run is not under-powered; alignment, not scale, was
-the gap. AMBROSIA databases are tiny by design, which
-is the crux of the clustering difficulty. Reproducing the paper's magnitudes is
-future work (finer clustering / lower A5 threshold, A4 serialization, larger
-databases) — enabled, not done, by this scaffold.
+Full numbers and caveats: [`docs/05-authors-pools-rerun.md`](docs/05-authors-pools-rerun.md).
+
+### How we got there (and what we got wrong)
+
+This replication produced **three successive headlines that were wrong**, each
+corrected by better evidence. That trail is kept deliberately — it is the main
+methodological finding.
+
+| Claim | Why it was wrong |
+|---|---|
+| "Clean reproduction" (15 samples) | a `sample_id` collision made runs overwrite each other |
+| "Clustering advantage does not reproduce" (150 samples) | our implementation differed from the authors' in **eight** load-bearing ways, two of them outright bugs |
+| "GPT-4o spans ≥2 interpretations in only 9% of questions" | measured with a criterion that nested gold outputs make structurally impossible |
+
+The decisive input was the authors' **supplementary code**, which settles decisions
+the paper leaves unstated (A3–A6, A8, A10, A12, A14–A16) — see
+[`specs/evaluation/17-authors-supplement.md`](specs/evaluation/17-authors-supplement.md).
+Two of the eight differences were bugs in *our* code that our own tests had encoded:
+only the first `UNION` branch was visited, and `sqlglot` 30's `from` → `from_` rename
+meant `FROM` atoms were never produced at all.
+
+The single change that flipped the result was **A10**: the authors' decision
+variables split *candidates* (with a generation-frequency belief), not clusters.
+Under cluster partitions, a mined feature group and a single atom induce the same
+partition, so grouping was provably inert. Nothing about AMBROSIA, clustering or
+the paper was at fault — the architecture was.
+
+### Validation layers
+
+- **Internal consistency** — 161 offline tests, deterministic, no network.
+- **Real-backend validation** — GPT-4o, `all-MiniLM-L6-v2`, UMAP, real AMBROSIA;
+  a 150-question run (7,500 calls, 1.6M tokens, full provenance).
+- **Like-for-like comparison** — the authors' 300 pools + their filter, zero API
+  cost, plus their per-turn curves extracted from their own 4.6 GB result log.
 
 ## Status
 

@@ -149,9 +149,9 @@ open gap-fill of ours.
 | A5 | Hierarchical-clustering linkage + how #clusters is chosen | 04 | ✅ Average linkage; **k = max(2, min(4, round(n/10) or 2))** on survivors, recomputed each turn. Their silhouette selector is dead code |
 | A6 | Exact atomic-feature vocabulary and value granularity (literals, `=` vs `LIKE`) | 05 | ✅ The **entire WHERE clause is ONE atom** (boolean structure preserved); set-ops recurse into both branches with depth in the atom |
 | A7 | Column/table alias canonicalization for atoms | 05 | Resolve aliases to base table.column before encoding |
-| A8 | Feature-grouping algorithm; lift threshold; co-occurrence threshold | 06 | Group by cluster; lift > 1 for characteristic; co-occ ≥ 0.95 for implicit |
+| A8 | Feature-grouping algorithm; lift threshold; co-occurrence threshold | 06 | ✅ Frequent-itemset mining per cluster: apriori L=1..4, `lift ≥ 1.3`, length by `Σ(lift−1)·supp/(1+0.25(size−1))`, `min_len=2`, top-1 per cluster |
 | A9 | Belief `p_t(m)` initialization (uniform vs LLM priors) | 07 | Uniform over surviving functional classes; alternative: sampling frequency |
-| A10 | Intent set `M` vs action set `A` mapping | 07 | One intent per functional cluster; actions in a cluster are equivalent |
+| A10 | Intent set `M` vs action set `A` mapping | 07 | ✅ **Candidate-level**: belief is generation frequency over candidates and variables split candidates; clustering only decides which variables exist. **Correcting this inverted our headline** |
 | A11 | Decision-variable value set (binary vs multi-valued) | 07 | Binary contains/excludes, per Figure 4/8 |
 | A12 | Loop termination (single action vs single functional class) | 08 | ✅ **Mean pairwise similarity of survivors ≥ 1** (`stop_mode="sim1"`, tol 1e-9) — stricter than a single cluster |
 | A13 | Simulated-user oracle answering policy in the eval | 10 | Answer yes/no by whether the gold query carries the decision variable |

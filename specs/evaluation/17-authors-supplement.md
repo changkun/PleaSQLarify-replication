@@ -118,20 +118,29 @@ spec-16 sweep can still vary them:
 | A15 | bits | **switched** |
 | A16 | condition names | **switched** |
 
-## 7. Status and open work
+## 7. Status
 
-1. ✅ "Authors' configuration" preset (`authors_config.AUTHORS`).
-2. ✅ Re-run on their pools with their sample filter — see
-   [`docs/05-authors-pools-rerun.md`](../../docs/05-authors-pools-rerun.md).
-   59 samples kept (they kept 64), 805 runs. Every condition improved under their
-   configuration, but **EIG-on-atomic still beats both clustering conditions**
-   (reach-zero 0.975 vs 0.901).
-3. ⬜ **A8 (feature grouping) is not yet aligned** — their `CLUSTER_GROUP` mines
-   itemsets with mlxtend apriori (`min_support=0.10`, `min_lift=1.3`, `top_k=12`,
-   `gamma_size_penalty=0.25`, `top_per_cluster=1`, `min_len=2`); we use cluster
-   common-atom signatures. This is the mechanism the clustering conditions depend
-   on and the most likely remaining explanation for the gap.
-4. ⬜ **Extract their logged per-turn curves** from `full_logs_08111341.jsonl` and
-   compare against ours — the decisive check, not yet done.
-5. ⬜ `SIM_IG_UNIFORM` is unimplemented (they ran it, did not report it).
-6. ⬜ Then the spec-16 sweep, as sensitivity analysis around a known-correct centre.
+| # | Item | Status |
+|---|---|---|
+| 1 | Authors' configuration preset (`authors_config.AUTHORS`) | ✅ |
+| 2 | Re-run on their pools with their filter (59 samples, 805 runs) | ✅ `docs/05` |
+| 3 | **A8** lift-mined feature groups | ✅ implemented |
+| 4 | **A10** candidate-level decision variables | ✅ — **the change that flipped the result** |
+| 5 | Their logged per-turn curves extracted from the 4.6 GB log | ✅ `docs/05` |
+| 6 | `SIM_IG_UNIFORM` strategy (their best condition, unreported in the paper) | ⬜ |
+| 7 | Their label scheme (`other`/`unclear`, highest encoded label dropped) | ⬜ |
+| 8 | Spec-16 sweep as sensitivity analysis around the aligned centre | ⬜ |
+
+**Outcome.** The paper's central claim reproduces: clustering + EIG beats EIG alone
+(0.994 vs 0.981). *Feature grouping* — their strongest condition by their own logs —
+does not; we find it level with the baseline. Items 6 and 7 are the most likely
+remaining explanations, and item 7 probably also accounts for the reach-zero ceiling
+(0.98–0.99 for us vs 0.65–0.86 for them) that compresses all our differences.
+
+### The methodological finding
+
+Eight decisions the paper leaves unstated turned out to be load-bearing, and one of
+them — **A10** — inverted the headline on its own. A replication that stops at
+"we followed the paper" can therefore land on a confident, well-tested, entirely
+wrong conclusion. Ours did, three times. The assumption register (`specs/README.md`)
+exists precisely so those decisions are visible and revisable rather than implicit.
