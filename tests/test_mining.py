@@ -130,3 +130,36 @@ def test_mine_groups_deduplicates_across_clusters():
     ]
     groups = mine_groups(survivors, intents)
     assert len(groups) == len(set(groups))
+
+
+def test_a_mined_group_adds_no_cluster_level_partition_beyond_single_atoms():
+    """Why Feature Grouping is inert in our architecture (spec 17, A8e/A10).
+
+    Our decision variables partition *intents* (one per cluster), and a group that
+    characterises cluster c induces the partition {c} — which some single atom in c
+    already induces. The dedup on partitions then drops the group, so the Feature
+    Grouping condition collapses onto the Atomic one no matter how well the mining
+    works. The authors avoid this because their variables split *candidates* by the
+    conjunction mask (`split_mode="mask"`), where a 3-atom group and a 1-atom group
+    filter the action space differently even with the same cluster partition.
+    """
+    from pleasqlarify.model.types import FeatureVocabulary
+    from pleasqlarify.pipeline.decision_vars import build_decision_variables
+
+    members = [_c("m1", 1, 2, 3), _c("m2", 1, 2, 3)]
+    others = [_c("o1", 9), _c("o2", 9)]
+    survivors = members + others
+    intents = [
+        Cluster(id=0, member_ids=["m1", "m2"], representative_id="m1"),
+        Cluster(id=1, member_ids=["o1", "o2"], representative_id="o1"),
+    ]
+    # mining does find a strong multi-atom group for cluster 0 ...
+    mined = mine_cluster_group(members, others)
+    assert mined and len(mined[0]) >= 2
+
+    vocab = FeatureVocabulary()
+    for a in range(10):
+        vocab.intern("ATOM", f"a{a}")
+    variables = build_decision_variables(survivors, intents, vocab, mode="mined")
+    # ... yet no multi-atom variable survives: its partition duplicates a single's
+    assert not any(len(v.group) > 1 for v in variables), [sorted(v.group) for v in variables]

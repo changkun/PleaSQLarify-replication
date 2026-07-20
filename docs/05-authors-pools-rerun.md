@@ -63,12 +63,28 @@ strategy.
 
 ## Remaining gaps — why this is not yet a verdict
 
-1. **A8 (feature grouping) is still ours, not theirs.** Their `CLUSTER_GROUP`
-   condition mines itemsets with mlxtend apriori (`min_support=0.10`,
-   `min_lift=1.3`, `top_k=12`, `gamma_size_penalty=0.25`, `top_per_cluster=1`,
-   `min_len=2`); we use cluster common-atom signatures. This is *the* mechanism the
-   clustering conditions depend on, so it is the most likely remaining explanation
-   for the gap and the next thing to align.
+1. **A8 mining is now aligned — and Feature Grouping is structurally inert here.**
+   Their itemset mining is implemented (apriori per length 1..4, lift ≥ 1.3,
+   length chosen by `sum((lift-1)*supp_in/(1+0.25*(size-1)))`, `min_len=2`, top-1
+   per cluster) and it *works*: on their pools it finds 3–4 groups per sample with
+   **lift 21–85**. Yet the Feature Grouping row came out **bit-identical** to the
+   Atomic row, and the reason is architectural, not a bug:
+
+   > Our decision variables partition **intents** (A10: one intent per cluster). A
+   > group that characterises cluster *c* induces the partition `{c}` — which some
+   > **single atom** in *c* already induces — so the partition-dedup drops it. The
+   > authors avoid this because their variables split **candidates** by the
+   > conjunction mask (`build_group_decision_vars`, `split_mode="mask"` by default):
+   > a 3-atom group and a 1-atom group filter the action space differently even when
+   > their cluster partitions coincide.
+
+   So *no* amount of better mining can make Feature Grouping differ from Atomic
+   under our cluster-partition variables. Reproducing their Feature Grouping
+   condition requires candidate-mask decision variables — a change to A10, not A8.
+   Pinned by `test_a_mined_group_adds_no_cluster_level_partition_beyond_single_atoms`.
+   (A cluster-value majority rule was added for mined groups, **A8e**, a documented
+   interpolation since their variables are candidate-level and our belief is
+   cluster-level.)
 2. **Their logged curves have not been extracted.** Their 4.6 GB
    `full_logs_08111341.jsonl` contains the per-turn entropies behind Figure 5.
    Comparing our curves against *their own recorded numbers* — rather than against

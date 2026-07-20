@@ -106,11 +106,26 @@ def build_decision_variables(
             lval = lift(group, members, candidates)
             if lval <= 1.0:  # keep only characteristic groups (spec 06, A8b)
                 continue
-            # value_of(m): cluster m carries the group iff its representative does
-            # (spec 06, A8a note: representative-based partition).
-            contains = frozenset(
-                cid for cid, rep in reps.items() if _contains(group, rep)
-            )
+            # value_of(m): which intents carry the group (A8a).
+            #
+            # The authors' decision variable splits *candidates* by the conjunction
+            # mask (`split_mode="mask"`), while our belief is over clusters (A10),
+            # so the two need reconciling. Representative-only is too brittle for
+            # mined groups: a group characterising most of a cluster is discarded
+            # whenever the single highest-gen_count member happens to lack it, which
+            # silently removed ~every mined group. We therefore aggregate the mask
+            # to cluster level by majority (**A8e**, a documented interpolation, not
+            # a decision read from their code).
+            if mode == "mined":
+                contains = frozenset(
+                    cl.id for cl in intents
+                    if sum(_contains(group, by_id[m]) for m in cl.member_ids) * 2
+                    > len(cl.member_ids)
+                )
+            else:
+                contains = frozenset(
+                    cid for cid, rep in reps.items() if _contains(group, rep)
+                )
             # a useful decision variable must actually split M_t
             if not contains or len(contains) == len(intents):
                 continue
