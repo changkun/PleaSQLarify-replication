@@ -93,12 +93,62 @@ def _split_and(node: Optional[exp.Expression]) -> list[exp.Expression]:
     return [node]
 
 
-def _atoms_for(ast: exp.Expression) -> list[tuple[str, str]]:
-    """Return ``(kind, payload)`` atoms for a parsed SELECT statement."""
+def _render_where(node: Optional[exp.Expression], amap: dict[str, str]) -> str:
+    """Serialize a whole WHERE clause, preserving boolean structure (A6, authors').
+
+    AND/OR are uppercased and their operands parenthesised, so that
+    ``a AND (b OR c)`` and ``(a AND b) OR c`` are *different* atoms. The authors
+    rely on this: their attachment heuristics inspect operator ordering inside the
+    serialized clause.
+    """
+    if node is None:
+        return ""
+    if isinstance(node, exp.Paren):
+        return _render_where(node.this, amap)
+    if isinstance(node, (exp.And, exp.Or)):
+        op = "AND" if isinstance(node, exp.And) else "OR"
+        return f"({_render_where(node.left, amap)} {op} {_render_where(node.right, amap)})"
+    return _render_predicate(node, amap)
+
+
+_SET_OPS = (exp.Union, exp.Intersect, exp.Except)
+
+
+def _from_node(select: exp.Select):
+    """FROM clause across sqlglot versions (30.x renamed the arg ``from`` -> ``from_``)."""
+    return select.args.get("from_") or select.args.get("from")
+
+
+def _depth_suffix(depth: int) -> str:
+    return f" @{depth}" if depth else ""
+
+
+def _atoms_for(
+    ast: exp.Expression, where_granularity: str = "clause", depth: int = 0
+) -> list[tuple[str, str]]:
+    """Return ``(kind, payload)`` atoms for a parsed statement.
+
+    Set operations (UNION/INTERSECT/EXCEPT) recurse into **both** branches at
+    ``depth + 1``, and the depth is part of the atom payload, so the same column at
+    a different nesting level is a different atom. This mirrors the authors'
+    ``recursively_extract`` with ``include_depth=True`` and matters enormously on
+    AMBROSIA: its attachment and scope ambiguities are UNIONs that differ only in
+    *which branch* carries the filter. Visiting one branch would make the two
+    interpretations atom-identical, leaving no decision variable able to separate
+    them.
+    """
     atoms: list[tuple[str, str]] = []
-    select = ast.find(exp.Select)
+    if isinstance(ast, _SET_OPS):
+        atoms.append(("SETOP", f"SETOP {ast.key.upper()}"))
+        for branch in (ast.this, ast.expression):
+            if branch is not None:
+                atoms.extend(_atoms_for(branch, where_granularity, depth + 1))
+        return atoms
+
+    select = ast if isinstance(ast, exp.Select) else ast.find(exp.Select)
     if select is None:
         return atoms
+    # a subquery inside FROM may itself be a set operation
     amap = _alias_map(select)
 
     # SELECT projections (incl. DISTINCT and aggregates).
@@ -106,7 +156,7 @@ def _atoms_for(ast: exp.Expression) -> list[tuple[str, str]]:
     for proj in select.expressions:
         target = proj.unalias() if isinstance(proj, exp.Alias) else proj
         if isinstance(target, exp.Star):
-            atoms.append(("SELECT_STAR", "SELECT *"))
+            atoms.append(("SELECT_STAR", f"SELECT *{_depth_suffix(depth)}"))
         elif isinstance(target, _AGG_FUNCS):
             inner = target.this
             arg = (
@@ -114,21 +164,23 @@ def _atoms_for(ast: exp.Expression) -> list[tuple[str, str]]:
                 if isinstance(inner, exp.Column)
                 else ("*" if isinstance(inner, exp.Star) else inner.sql(dialect="sqlite"))
             )
-            atoms.append(("AGG", f"AGG {target.key.upper()}({arg})"))
+            atoms.append(("AGG", f"AGG {target.key.upper()}({arg}){_depth_suffix(depth)}"))
         elif isinstance(target, exp.Column):
             col = _col_name(target, amap)
             if distinct:
-                atoms.append(("DISTINCT", f"SELECT DISTINCT {col}"))
+                atoms.append(("DISTINCT", f"SELECT DISTINCT {col}{_depth_suffix(depth)}"))
             else:
-                atoms.append(("SELECT_COL", f"SELECT {col}"))
+                atoms.append(("SELECT_COL", f"SELECT {col}{_depth_suffix(depth)}"))
         else:
-            atoms.append(("SELECT_COL", f"SELECT {target.sql(dialect='sqlite')}"))
+            atoms.append(
+                ("SELECT_COL", f"SELECT {target.sql(dialect='sqlite')}{_depth_suffix(depth)}")
+            )
 
     # FROM tables.
-    from_ = select.args.get("from")
+    from_ = _from_node(select)
     if from_ is not None:
         for tbl in from_.find_all(exp.Table):
-            atoms.append(("FROM_TABLE", f"FROM {tbl.name}"))
+            atoms.append(("FROM_TABLE", f"FROM {tbl.name}{_depth_suffix(depth)}"))
 
     # JOINs.
     for join in select.args.get("joins", []) or []:
@@ -136,26 +188,38 @@ def _atoms_for(ast: exp.Expression) -> list[tuple[str, str]]:
         tname = tbl.name if isinstance(tbl, exp.Table) else tbl.sql(dialect="sqlite")
         on = join.args.get("on")
         on_txt = f" ON {_render_predicate(on, amap)}" if on is not None else ""
-        atoms.append(("JOIN", f"JOIN {tname}{on_txt}"))
+        atoms.append(("JOIN", f"JOIN {tname}{on_txt}{_depth_suffix(depth)}"))
 
-    # WHERE predicates.
+    # WHERE. Two granularities (assumption A6):
+    #  * "clause" (the authors' rule): the ENTIRE where clause is a single atom,
+    #    with its boolean structure preserved and parenthesised. This is what makes
+    #    "filter on the left side" vs "filter on the right side" a single yes/no
+    #    decision -- exactly the attachment ambiguity the paper targets.
+    #  * "predicate" (our original gap-fill): one atom per AND-separated predicate.
     where = select.args.get("where")
     if where is not None:
-        for pred in _split_and(where.this):
-            atoms.append(("WHERE_PRED", f"WHERE {_render_predicate(pred, amap)}"))
+        if where_granularity == "clause":
+            atoms.append(
+                ("WHERE_CLAUSE", f"WHERE {_render_where(where.this, amap)}{_depth_suffix(depth)}")
+            )
+        else:
+            for pred in _split_and(where.this):
+                atoms.append(
+                    ("WHERE_PRED", f"WHERE {_render_predicate(pred, amap)}{_depth_suffix(depth)}")
+                )
 
     # GROUP BY.
     group = select.args.get("group")
     if group is not None:
         for g in group.expressions:
             key = _col_name(g, amap) if isinstance(g, exp.Column) else g.sql(dialect="sqlite")
-            atoms.append(("GROUP_BY", f"GROUP BY {key}"))
+            atoms.append(("GROUP_BY", f"GROUP BY {key}{_depth_suffix(depth)}"))
 
     # HAVING.
     having = select.args.get("having")
     if having is not None:
         for pred in _split_and(having.this):
-            atoms.append(("HAVING", f"HAVING {_render_predicate(pred, amap)}"))
+            atoms.append(("HAVING", f"HAVING {_render_predicate(pred, amap)}{_depth_suffix(depth)}"))
 
     # ORDER BY.
     order = select.args.get("order")
@@ -167,12 +231,14 @@ def _atoms_for(ast: exp.Expression) -> list[tuple[str, str]]:
                 if isinstance(o.this, exp.Column)
                 else o.this.sql(dialect="sqlite")
             )
-            atoms.append(("ORDER_BY", f"ORDER BY {key} {direction}"))
+            atoms.append(("ORDER_BY", f"ORDER BY {key} {direction}{_depth_suffix(depth)}"))
 
     # LIMIT.
     limit = select.args.get("limit")
     if limit is not None:
-        atoms.append(("LIMIT", f"LIMIT {limit.expression.sql(dialect='sqlite')}"))
+        atoms.append(
+            ("LIMIT", f"LIMIT {limit.expression.sql(dialect='sqlite')}{_depth_suffix(depth)}")
+        )
 
     return atoms
 
@@ -203,7 +269,9 @@ def parse_and_qualify(sql: str, schema: DbSchema) -> Optional[exp.Expression]:
     return ast
 
 
-def extract_features(candidates: ActionSpace, schema: DbSchema) -> FeatureVocabulary:
+def extract_features(
+    candidates: ActionSpace, schema: DbSchema, where_granularity: str = "clause"
+) -> FeatureVocabulary:
     """Build the session vocabulary and set ``candidate.z`` for each candidate."""
     vocab = FeatureVocabulary()
     for cand in candidates:
@@ -211,7 +279,10 @@ def extract_features(candidates: ActionSpace, schema: DbSchema) -> FeatureVocabu
         if ast is None:
             cand.z = frozenset()
             continue
-        indices = {vocab.intern(kind, payload) for kind, payload in _atoms_for(ast)}
+        indices = {
+            vocab.intern(kind, payload)
+            for kind, payload in _atoms_for(ast, where_granularity)
+        }
         cand.z = frozenset(indices)
     return vocab
 

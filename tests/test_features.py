@@ -23,7 +23,12 @@ def test_eq_vs_like_are_distinct_atoms(schema):
 def test_star_is_single_atom(schema):
     c = Candidate("c", "SELECT * FROM Film")
     vocab = extract_features([c], schema)
-    assert _payloads(vocab, c) == {"SELECT *"}  # not expanded (A8)
+    payloads = _payloads(vocab, c)
+    # SELECT * stays one atom, not expanded per column (A8) ...
+    assert "SELECT *" in payloads
+    assert not any(p.startswith("SELECT Film.") for p in payloads)
+    # ... alongside the FROM atom (absent before the sqlglot 30 'from_' fix)
+    assert any(p.startswith("FROM ") for p in payloads)
 
 
 def test_distinct_atom(schema):
