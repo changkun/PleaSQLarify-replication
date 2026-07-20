@@ -74,7 +74,7 @@ def main() -> None:
     log(f"preset={args.preset} cfg={cfg.as_dict()}")
     log(f"samples={len(samples)} loader_stats={stats}")
 
-    conditions = five_conditions(args.seed)
+    conditions = five_conditions(args.seed, group_mode=cfg.group_mode)
     rows = []
     t0 = time.time()
     for i, s in enumerate(samples, 1):

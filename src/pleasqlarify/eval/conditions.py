@@ -64,15 +64,20 @@ class Condition:
         return self.policy(session.belief, session.variables)
 
 
-def five_conditions(seed: int = 0) -> list[Condition]:
-    """The five conditions compared in Figure 5 (spec 09)."""
+def five_conditions(seed: int = 0, group_mode: str = "grouped") -> list[Condition]:
+    """The five conditions compared in Figure 5 (spec 09).
+
+    ``group_mode`` selects how the Feature Grouping condition forms multi-atom
+    groups: ``"grouped"`` (our cluster-signature gap-fill) or ``"mined"`` (the
+    authors' lift-mined itemsets, spec 17 A8).
+    """
     return [
         Condition("Baseline Random + Atomic Features", False, "atomic", make_random_policy(seed)),
         Condition("Baseline Max-Prob-First + Atomic Features", False, "atomic", max_prob_first_policy),
         # 'ERG' in the Fig 5 legend == EIG without clustering (spec 09/10, A16).
         Condition("Baseline EIG + Atomic Features", False, "atomic", eig_policy),
         Condition("Clustering + EIG + Atomic Features", True, "atomic", eig_policy),
-        Condition("Clustering + EIG + Feature Grouping", True, "grouped", eig_policy),
+        Condition("Clustering + EIG + Feature Grouping", True, group_mode, eig_policy),
     ]
 
 

@@ -182,3 +182,14 @@ def test_repair_never_rewrites_insert_payloads(tmp_path):
     assert "weird,)value" in repair_dump(dump)
     path = materialize_db(dump, str(tmp_path), "lit")
     assert run_query(path, "SELECT v FROM T").rows == [("weird,)value",)]
+
+
+def test_authors_preset_uses_mined_feature_groups():
+    """A8: their CLUSTER_GROUP mines itemsets; ours used cluster signatures."""
+    from pleasqlarify.eval.conditions import five_conditions
+
+    assert AUTHORS.group_mode == "mined"
+    assert OURS_ORIGINAL.group_mode == "grouped"
+    grouping = [c for c in five_conditions(0, group_mode=AUTHORS.group_mode)
+                if c.name.endswith("Feature Grouping")]
+    assert grouping and grouping[0].mode == "mined"

@@ -48,15 +48,29 @@ def cooccurrence(
 
 
 def _candidate_groups(
-    members: list[Candidate], mode: str
+    members: list[Candidate], mode: str, others: list[Candidate] | None = None
 ) -> list[frozenset[int]]:
-    """Enumerate candidate feature groups g for a cluster (spec 06, A8a)."""
+    """Enumerate candidate feature groups g for a cluster (spec 06, A8a).
+
+    ``mode``:
+      * ``atomic``  - single atoms only.
+      * ``grouped`` - singles + the cluster's common signature (our original A8
+        gap-fill).
+      * ``mined``   - singles + the cluster-characteristic itemset mined by lift
+        (**the authors' rule**, see :mod:`pleasqlarify.pipeline.mining`).
+    """
     atoms: set[int] = set()
     for c in members:
         atoms |= c.z
     singles = [frozenset({a}) for a in sorted(atoms)]
     if mode == "atomic":
         return singles
+    if mode == "mined":
+        from .mining import mine_cluster_group
+
+        groups = list(singles)
+        groups.extend(mine_cluster_group(members, others or []))
+        return groups
     # grouped: singles + the cluster's common signature (intersection of members),
     # which captures jointly-emergent meaning ("interaction neglect", spec 06).
     groups = list(singles)
@@ -75,8 +89,8 @@ def build_decision_variables(
 ) -> list[DecisionVariable]:
     """Build characteristic (lift > 1) decision variables over the intents.
 
-    ``mode`` is ``"grouped"`` (multi-atom groups allowed) or ``"atomic"``
-    (single-atom variables only) - the two "ours" eval variants (spec 06, A8c).
+    ``mode`` is ``"atomic"`` (single atoms), ``"grouped"`` (our cluster-signature
+    gap-fill) or ``"mined"`` (the authors' lift-mined itemsets) - spec 06, A8c.
     """
     by_id = {c.id: c for c in candidates}
     reps = {cl.id: by_id[cl.representative_id] for cl in intents}
@@ -86,7 +100,9 @@ def build_decision_variables(
 
     for cluster in intents:
         members = [by_id[mid] for mid in cluster.member_ids]
-        for group in _candidate_groups(members, mode):
+        member_ids = set(cluster.member_ids)
+        others = [c for c in candidates if c.id not in member_ids]
+        for group in _candidate_groups(members, mode, others):
             lval = lift(group, members, candidates)
             if lval <= 1.0:  # keep only characteristic groups (spec 06, A8b)
                 continue
