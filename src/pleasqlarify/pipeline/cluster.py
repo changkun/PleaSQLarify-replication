@@ -23,6 +23,19 @@ from ..model.types import Candidate, Cluster, IntentSet
 
 LINKAGES = ("average", "complete", "single")
 
+# The authors' live k rule (their run_eval.recluster_and_mine_groups), which
+# shadows the silhouette-based helper that never runs. k is a size heuristic on
+# the number of *surviving* candidates, recomputed every turn (A5).
+TARGET_CLUSTER_SIZE = 10
+MAX_K = 4
+MIN_K = 2
+
+
+def authors_k(n_survivors: int, target_cluster_size: int = TARGET_CLUSTER_SIZE,
+              max_k: int = MAX_K) -> int:
+    """k = max(2, min(max_K, round(n / target_cluster_size) or 2)) — verbatim (A5)."""
+    return max(MIN_K, min(max_k, int(round(n_survivors / target_cluster_size)) or MIN_K))
+
 
 def _agglomerate(
     dist: np.ndarray, k: int | None, threshold: float, linkage: str = "average"
@@ -91,4 +104,4 @@ def cluster_candidates(
     return intents
 
 
-__all__ = ["cluster_candidates", "LINKAGES"]
+__all__ = ["cluster_candidates", "LINKAGES", "authors_k", "TARGET_CLUSTER_SIZE", "MAX_K"]

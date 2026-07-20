@@ -25,8 +25,9 @@ from .model.types import (
     IntentSet,
     ResultTable,
 )
+from .eval.metrics import mean_pairwise_similarity
 from .pipeline import belief as belief_mod
-from .pipeline.cluster import cluster_candidates
+from .pipeline.cluster import authors_k, cluster_candidates
 from .pipeline.decision_vars import atom_probabilities, build_decision_variables
 from .pipeline.embed import Embedder, similarity_matrix
 from .pipeline.features import extract_features
@@ -55,6 +56,7 @@ class Session:
     belief_init: BeliefInit = "uniform"
     clustering: bool = True
     k: Optional[int] = None
+    k_mode: str = "threshold"  # "threshold" | "authors" (A5): how k is chosen
     threshold: float = 0.1
     linkage: str = "average"                      # A5 axis
     termination: str = "cluster_or_uninformative"  # A12 axis
@@ -90,8 +92,13 @@ class Session:
         if self.clustering:
             idx = [self._index[cid] for cid in self.surviving_ids]
             sub = self.sim[np.ix_(idx, idx)]
+            # A5: with k_mode="authors", k is the size heuristic recomputed on the
+            # surviving pool every turn (their dynamic_reclustering=True).
+            k = self.k
+            if self.k_mode == "authors" and k is None:
+                k = min(authors_k(len(survivors)), len(survivors))
             self.intents = cluster_candidates(
-                survivors, sub, k=self.k, threshold=self.threshold, linkage=self.linkage
+                survivors, sub, k=k, threshold=self.threshold, linkage=self.linkage
             )
         else:
             # baselines without clustering: each surviving query is its own intent
@@ -110,7 +117,12 @@ class Session:
     # ------------------------------------------------------------- loop ops
     @property
     def terminated(self) -> bool:
-        return is_terminated(self.intents, self.ranked, rule=self.termination)
+        mean_sim = None
+        if self.termination == "similarity_one":
+            mean_sim = mean_pairwise_similarity(self.surviving_indices(), self.sim)
+        return is_terminated(
+            self.intents, self.ranked, rule=self.termination, mean_similarity=mean_sim
+        )
 
     def next_variable(self) -> Optional[DecisionVariable]:
         if self.terminated:
@@ -187,6 +199,7 @@ def build_session(
     belief_init: BeliefInit = "uniform",
     clustering: bool = True,
     k: Optional[int] = None,
+    k_mode: str = "threshold",
     threshold: float = 0.1,
     linkage: str = "average",
     termination: str = "cluster_or_uninformative",
@@ -226,6 +239,7 @@ def build_session(
         belief_init=belief_init,
         clustering=clustering,
         k=k,
+        k_mode=k_mode,
         threshold=threshold,
         linkage=linkage,
         termination=termination,
