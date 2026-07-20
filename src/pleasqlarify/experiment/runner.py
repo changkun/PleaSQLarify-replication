@@ -43,6 +43,7 @@ class ExperimentConfig:
     threshold: float = 0.1
     real_embedder: bool = False    # MiniLM vs deterministic offline embedder
     resume: bool = True
+    n_boot: int = 10000          # bootstrap resamples for the CIs (spec 10)
     sample_ids: Optional[list[str]] = field(default=None)  # explicit selection
 
 
@@ -286,8 +287,10 @@ def _write_results(recorder, all_rows, conditions, config, coverage):
         key = f"{r[0]}|{r[1]}|{r[4]}"
         groups[key]["entropy"].append(r[5])
         groups[key]["similarity"].append(r[6])
+    nb = config.n_boot
     agg = {
-        k: {"entropy": bootstrap_ci(v["entropy"]), "similarity": bootstrap_ci(v["similarity"]),
+        k: {"entropy": bootstrap_ci(v["entropy"], n_boot=nb),
+            "similarity": bootstrap_ci(v["similarity"], n_boot=nb),
             "n": len(v["entropy"])}
         for k, v in groups.items()
     }

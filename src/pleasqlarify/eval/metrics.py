@@ -48,10 +48,11 @@ def bootstrap_ci(
     if arr.size == 0:
         return (float("nan"), float("nan"), float("nan"))
     rng = np.random.default_rng(seed)
-    boot_medians = np.empty(n_boot)
-    for b in range(n_boot):
-        sample = rng.choice(arr, size=arr.size, replace=True)
-        boot_medians[b] = np.median(sample)
+    # Vectorized resampling: draw the whole (n_boot x n) index matrix at once and
+    # take medians along one axis. The per-draw Python loop this replaces cost
+    # ~1.1s per call, which at ~330 calls dominated the entire test suite.
+    idx = rng.integers(0, arr.size, size=(n_boot, arr.size))
+    boot_medians = np.median(arr[idx], axis=1)
     alpha = (1.0 - ci) / 2.0
     lo = float(np.quantile(boot_medians, alpha))
     hi = float(np.quantile(boot_medians, 1.0 - alpha))

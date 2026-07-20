@@ -58,6 +58,7 @@ def test_run_experiment_offline_produces_full_tree(tmp_path):
     cfg = ExperimentConfig(
         model="mock", per_type=1, n=6, max_turns=4,
         real_embedder=False, resume=False, threads=1,
+        n_boot=200,   # CIs are exercised, not measured: keeps this test seconds, not minutes
     )
     rec = run_experiment(
         cfg, str(tmp_path / "run"),

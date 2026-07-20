@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import re
 import sqlite3
+from urllib.parse import quote
 from contextlib import closing
 
 from ..model.types import ResultTable
@@ -28,8 +29,11 @@ def run_query(db_path: str, sql: str, timeout_s: float = 5.0) -> ResultTable:
     try:
         # Read-only connection; per-statement interrupt via progress handler timeout
         # is overkill for the tiny AMBROSIA DBs, so rely on the busy timeout only.
+        # The path goes into a URI, so '#' and '?' must be percent-encoded or
+        # SQLite reads them as fragment/query delimiters and silently opens a
+        # *different* (empty) database. Leave '/' intact.
         conn = sqlite3.connect(
-            f"file:{db_path}?mode=ro", uri=True, timeout=timeout_s
+            f"file:{quote(db_path, safe='/')}?mode=ro", uri=True, timeout=timeout_s
         )
     except sqlite3.Error as exc:  # pragma: no cover - connection failure is rare
         return ResultTable(error=f"connect: {exc}")
